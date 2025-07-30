@@ -65,33 +65,22 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
   const RevenueChart: React.FC = () => (
     <Card className="omni-card">
       <Heading size="lg" marginBottom={3}>Revenue Trend</Heading>
-      <Box style={{ height: '200px', position: 'relative' }}>
+      <div>
         {/* Mock chart - in real app, this would be a proper chart library */}
-        <Box style={{ 
-          display: 'flex', 
-          alignItems: 'end', 
-          height: '150px', 
-          gap: '8px',
-          padding: '1rem 0'
-        }}>
+        <div>
           {revenueHistory.map((day, index) => (
-            <Box key={index} style={{ flex: 1, textAlign: 'center' }}>
-              <Box style={{
-                height: `${(day.revenue / 3200) * 100}px`,
-                background: 'linear-gradient(180deg, var(--omni-primary), var(--omni-secondary))',
-                borderRadius: '4px 4px 0 0',
-                minHeight: '4px'
-              }} />
+            <div>
+              <div>
               <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)', marginTop: '0.5rem' }}>
                 ${day.revenue}
               </Text>
-            </Box>
+            </div>
           ))}
-        </Box>
+        </div>
         <Text style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)', textAlign: 'center' }}>
           Last 7 days revenue trend
         </Text>
-      </Box>
+      </div>
     </Card>
   );
 
@@ -101,112 +90,82 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
       
       <Grid container spacing={2} marginBottom={3}>
         <Grid item xs={12} md={4}>
-          <Box textAlign="center" padding={2}>
+          <div>
             <Text style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>
               {revenueData.bondRevenue}
             </Text>
             <Text style={{ color: 'var(--omni-text-secondary)' }}>Bond Sales</Text>
             <Text style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+12.5%</Text>
-          </Box>
+          </div>
         </Grid>
         <Grid item xs={12} md={4}>
-          <Box textAlign="center" padding={2}>
+          <div>
             <Text style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-secondary)' }}>
               {revenueData.tradingFees}
             </Text>
             <Text style={{ color: 'var(--omni-text-secondary)' }}>Trading Fees</Text>
             <Text style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+8.3%</Text>
-          </Box>
+          </div>
         </Grid>
         <Grid item xs={12} md={4}>
-          <Box textAlign="center" padding={2}>
+          <div>
             <Text style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-accent)' }}>
               {revenueData.otherRevenue}
             </Text>
             <Text style={{ color: 'var(--omni-text-secondary)' }}>Other Sources</Text>
             <Text style={{ fontSize: '0.75rem', color: 'var(--omni-error)' }}>-2.1%</Text>
-          </Box>
+          </div>
         </Grid>
       </Grid>
 
-      <Box>
+      <div>
         <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Sources</Text>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Box display="flex" justifyContent="space-between" alignItems="center" padding={1}>
+            <div>
               <Text>Bond Sales</Text>
               <Text style={{ fontWeight: 'bold' }}>62.9%</Text>
-            </Box>
-            <Box style={{ 
-              height: '4px', 
-              background: 'rgba(99, 102, 241, 0.2)', 
-              borderRadius: '2px',
-              marginBottom: '0.5rem'
-            }}>
-              <Box style={{ 
-                height: '100%', 
-                width: '62.9%',
-                background: 'var(--omni-primary)',
-                borderRadius: '2px'
-              }} />
-            </Box>
+            </div>
+            <div>
+              <div>
+            </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box display="flex" justifyContent="space-between" alignItems="center" padding={1}>
+            <div>
               <Text>Trading Fees</Text>
               <Text style={{ fontWeight: 'bold' }}>28.3%</Text>
-            </Box>
-            <Box style={{ 
-              height: '4px', 
-              background: 'rgba(139, 92, 246, 0.2)', 
-              borderRadius: '2px',
-              marginBottom: '0.5rem'
-            }}>
-              <Box style={{ 
-                height: '100%', 
-                width: '28.3%',
-                background: 'var(--omni-secondary)',
-                borderRadius: '2px'
-              }} />
-            </Box>
+            </div>
+            <div>
+              <div>
+            </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box display="flex" justifyContent="space-between" alignItems="center" padding={1}>
+            <div>
               <Text>Other Sources</Text>
               <Text style={{ fontWeight: 'bold' }}>8.8%</Text>
-            </Box>
-            <Box style={{ 
-              height: '4px', 
-              background: 'rgba(6, 182, 212, 0.2)', 
-              borderRadius: '2px',
-              marginBottom: '0.5rem'
-            }}>
-              <Box style={{ 
-                height: '100%', 
-                width: '8.8%',
-                background: 'var(--omni-accent)',
-                borderRadius: '2px'
-              }} />
-            </Box>
+            </div>
+            <div>
+              <div>
+            </div>
           </Grid>
         </Grid>
-      </Box>
+      </div>
     </Card>
   );
 
   return (
-          <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-      <Box textAlign="center" marginBottom={4}>
+          <div>
+      <div>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           Revenue Analytics
         </Heading>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Track real-time revenue sharing and distribution metrics
         </Text>
-      </Box>
+      </div>
 
       {/* Timeframe Selector */}
-      <Box marginBottom={4} textAlign="center">
+      <div>
         <Grid container justifyContent="center" spacing={2}>
           {['24h', '7d', '30d', '90d'].map((period) => (
             <Grid item key={period}>
@@ -220,7 +179,7 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </div>
 
       {/* Key Metrics */}
       <div className="omni-stats-grid">
@@ -279,88 +238,58 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
             
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
-                <Box marginBottom={3}>
+                <div>
                   <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Distribution</Text>
-                  <Box marginBottom={2}>
-                    <Box display="flex" justifyContent="space-between" marginBottom={1}>
+                  <div>
+                    <div>
                       <Text>To Stakers</Text>
                       <Text style={{ fontWeight: 'bold' }}>85%</Text>
-                    </Box>
-                    <Box style={{ 
-                      height: '8px', 
-                      background: 'rgba(16, 185, 129, 0.2)', 
-                      borderRadius: '4px',
-                      overflow: 'hidden'
-                    }}>
-                      <Box style={{ 
-                        height: '100%', 
-                        width: '85%',
-                        background: 'var(--omni-success)',
-                        borderRadius: '4px'
-                      }} />
-                    </Box>
-                  </Box>
-                  <Box marginBottom={2}>
-                    <Box display="flex" justifyContent="space-between" marginBottom={1}>
+                    </div>
+                    <div>
+                      <div>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
                       <Text>To Treasury</Text>
                       <Text style={{ fontWeight: 'bold' }}>10%</Text>
-                    </Box>
-                    <Box style={{ 
-                      height: '8px', 
-                      background: 'rgba(99, 102, 241, 0.2)', 
-                      borderRadius: '4px',
-                      overflow: 'hidden'
-                    }}>
-                      <Box style={{ 
-                        height: '100%', 
-                        width: '10%',
-                        background: 'var(--omni-primary)',
-                        borderRadius: '4px'
-                      }} />
-                    </Box>
-                  </Box>
+                    </div>
+                    <div>
+                      <div>
+                    </div>
+                  </div>
                   <Box>
-                    <Box display="flex" justifyContent="space-between" marginBottom={1}>
+                    <div>
                       <Text>To Team</Text>
                       <Text style={{ fontWeight: 'bold' }}>5%</Text>
-                    </Box>
-                    <Box style={{ 
-                      height: '8px', 
-                      background: 'rgba(139, 92, 246, 0.2)', 
-                      borderRadius: '4px',
-                      overflow: 'hidden'
-                    }}>
-                      <Box style={{ 
-                        height: '100%', 
-                        width: '5%',
-                        background: 'var(--omni-secondary)',
-                        borderRadius: '4px'
-                      }} />
-                    </Box>
-                  </Box>
-                </Box>
+                    </div>
+                    <div>
+                      <div>
+                    </div>
+                  </div>
+                </div>
               </Grid>
 
               <Grid item xs={12} md={6}>
-                <Box marginBottom={3}>
+                <div>
                   <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Recent Distributions</Text>
                   <Box>
                     {revenueHistory.slice(-5).reverse().map((day, index) => (
-                      <Box key={index} display="flex" justifyContent="space-between" marginBottom={1}>
+                      <div>
                         <Text style={{ fontSize: '0.875rem' }}>{day.date}</Text>
                         <Text style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
                           ${day.revenue.toLocaleString()}
                         </Text>
-                      </Box>
+                      </div>
                     ))}
-                  </Box>
-                </Box>
+                  </div>
+                </div>
               </Grid>
             </Grid>
           </Card>
         </Grid>
       </Grid>
-          </Box>
+          </div>
   );
 };
 

@@ -66,15 +66,15 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
   };
 
   return (
-    <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-      <Box textAlign="center" marginBottom={4}>
+    <div>
+      <div>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           LP Bond Interface
         </Heading>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Acquire LP positions with supply neutralization for optimal liquidity management
         </Text>
-      </Box>
+      </div>
 
       <Grid container spacing={4}>
         {/* LP Bond Creation */}
@@ -83,7 +83,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
             <Heading size="lg" marginBottom={3}>Create LP Bond</Heading>
             
             {/* Pool Selection */}
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Select LP Pool</Text>
               <Grid container spacing={2}>
                 {lpPools.map((pool) => (
@@ -97,13 +97,13 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                       }}
                       onClick={() => handlePoolSelect(pool.symbol)}
                     >
-                      <Box display="flex" alignItems="center" gap={2} marginBottom={1}>
+                      <div>
                         <Text style={{ fontSize: '1.5rem' }}>{pool.icon}</Text>
                         <Box>
                           <Text style={{ fontWeight: 'bold' }}>{pool.symbol}</Text>
                           <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>{pool.name}</Text>
-                        </Box>
-                      </Box>
+                        </div>
+                      </div>
                       <Grid container spacing={1}>
                         <Grid item xs={6}>
                           <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>TVL</Text>
@@ -118,10 +118,10 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                   </Grid>
                 ))}
               </Grid>
-            </Box>
+            </div>
 
             {/* Amount Input */}
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Provide</Text>
               <Input
                 type="number"
@@ -138,10 +138,10 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                   color: 'var(--omni-text)',
                 }}
               />
-            </Box>
+            </div>
 
             {/* LP Bond Details */}
-            <Box marginBottom={3}>
+            <div>
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <Card className="omni-stat-card">
@@ -158,7 +158,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                   </Card>
                 </Grid>
               </Grid>
-            </Box>
+            </div>
 
             {/* Create LP Bond Button */}
             <Button
@@ -184,24 +184,24 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
           <Card className="omni-card">
             <Heading size="md" marginBottom={3}>LP Bond Information</Heading>
             
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Supply Neutralization</Text>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 LP bonds automatically neutralize supply impact by minting and burning tokens strategically.
               </Text>
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Vesting Period</Text>
               <Text style={{ color: 'var(--omni-text-secondary)' }}>14 days linear vesting</Text>
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Minimum Bond</Text>
               <Text style={{ color: 'var(--omni-text-secondary)' }}>0.1 ETH equivalent</Text>
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>LP Bond Benefits</Text>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 • Earn trading fees from LP positions<br/>
@@ -209,7 +209,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                 • Higher APY than regular bonds<br/>
                 • Liquidity provision rewards
               </Text>
-            </Box>
+            </div>
           </Card>
 
           {/* LP Bond History */}
@@ -220,11 +220,11 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                 No active LP bonds found.<br/>
                 Connect your wallet to see your LP bond history.
               </Text>
-            </Box>
+            </div>
           </Card>
         </Grid>
       </Grid>
-    </Box>
+    </div>
   );
 };
 

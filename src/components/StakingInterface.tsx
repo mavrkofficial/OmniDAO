@@ -87,15 +87,15 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
   );
 
   return (
-    <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-      <Box textAlign="center" marginBottom={4}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           Staking Interface
         </Heading>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Stake your OMNI tokens to earn sOMNI and receive revenue distributions
         </Text>
-      </Box>
+      </div>
 
       {/* User Stats */}
       <div className="omni-stats-grid">
@@ -132,7 +132,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
           <Card className="omni-card">
             <Heading size="lg" marginBottom={3}>Stake OMNI</Heading>
             
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Stake</Text>
               <Input
                 type="number"
@@ -148,16 +148,16 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
                   color: 'var(--omni-text)',
                 }}
               />
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 • 1:1 conversion rate (1 OMNI = 1 sOMNI)<br/>
                 • Start earning rewards immediately<br/>
                 • No lock-up period<br/>
                 • Revenue sharing enabled
               </Text>
-            </Box>
+            </div>
 
             <Button
               variant="primary"
@@ -182,7 +182,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
           <Card className="omni-card">
             <Heading size="lg" marginBottom={3}>Unstake sOMNI</Heading>
             
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Unstake</Text>
               <Input
                 type="number"
@@ -198,16 +198,16 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
                   color: 'var(--omni-text)',
                 }}
               />
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 • 1:1 conversion rate (1 sOMNI = 1 OMNI)<br/>
                 • No unstaking penalty<br/>
                 • Immediate withdrawal<br/>
                 • Keep earned rewards
               </Text>
-            </Box>
+            </div>
 
             <Button
               variant="secondary"
@@ -234,7 +234,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
             
             <Grid container spacing={3} alignItems="center">
               <Grid item xs={12} md={8}>
-                <Box>
+                <div>
                   <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Available Rewards</Text>
                   <Text style={{ 
                     fontSize: '2rem', 
@@ -247,7 +247,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
                   <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                     Revenue distributions from protocol fees and bond sales
                   </Text>
-                </Box>
+                </div>
               </Grid>
               <Grid item xs={12} md={4}>
                 <Button
@@ -277,44 +277,44 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
         
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>How Staking Works</Text>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 When you stake OMNI tokens, you receive sOMNI (staked OMNI) tokens in return. 
                 These sOMNI tokens represent your share of the protocol's revenue and allow you 
                 to participate in governance decisions.
               </Text>
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Revenue Distribution</Text>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 Protocol revenue from bond sales, trading fees, and other sources is distributed 
                 proportionally to all sOMNI holders. You can claim your rewards at any time.
               </Text>
-            </Box>
+            </div>
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Governance Rights</Text>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 sOMNI tokens grant you voting rights in DAO governance proposals. The more sOMNI 
                 you hold, the more influence you have in protocol decisions.
               </Text>
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Risk Considerations</Text>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 Staking involves smart contract risk. While the protocol is designed to be secure, 
                 always do your own research and only stake what you can afford to lose.
               </Text>
-            </Box>
+            </div>
           </Grid>
         </Grid>
       </Card>
-    </Box>
+    </div>
   );
 };
 

@@ -76,14 +76,14 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
 
     return (
       <Card className="omni-card" style={{ marginBottom: '1rem' }}>
-        <Box display="flex" justifyContent="space-between" alignItems="flex-start" marginBottom={2}>
+        <div>
           <Box>
             <Heading size="md" marginBottom={1}>{proposal.title}</Heading>
             <Text style={{ color: 'var(--omni-text-secondary)', marginBottom: '1rem' }}>
               {proposal.description}
             </Text>
-          </Box>
-          <Box textAlign="right">
+          </div>
+          <div>
             <Text style={{ 
               fontSize: '0.75rem', 
               padding: '0.25rem 0.5rem',
@@ -94,8 +94,8 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
             }}>
               {proposal.status}
             </Text>
-          </Box>
-        </Box>
+          </div>
+        </div>
 
         <Grid container spacing={2} marginBottom={2}>
           <Grid item xs={6}>
@@ -117,29 +117,19 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
         </Grid>
 
         {/* Vote Progress */}
-        <Box marginBottom={2}>
-          <Box display="flex" justifyContent="space-between" marginBottom={1}>
+        <div>
+          <div>
             <Text style={{ fontSize: '0.875rem' }}>For: {proposal.votesFor.toLocaleString()} ({forPercentage}%)</Text>
             <Text style={{ fontSize: '0.875rem' }}>Against: {proposal.votesAgainst.toLocaleString()} ({againstPercentage}%)</Text>
-          </Box>
-          <Box style={{ 
-            height: '8px', 
-            background: 'rgba(99, 102, 241, 0.2)', 
-            borderRadius: '4px',
-            overflow: 'hidden'
-          }}>
-            <Box style={{ 
-              height: '100%', 
-              width: `${forPercentage}%`,
-              background: 'linear-gradient(90deg, var(--omni-success), var(--omni-primary))',
-              borderRadius: '4px'
-            }} />
-          </Box>
-        </Box>
+          </div>
+          <div>
+            <div>
+          </div>
+        </div>
 
         {/* Vote Buttons */}
         {proposal.status === 'Active' && (
-          <Box display="flex" gap={2}>
+          <div>
             <Button
               variant="primary"
               size="sm"
@@ -166,25 +156,25 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
             >
               Vote Against
             </Button>
-          </Box>
+          </div>
         )}
       </Card>
     );
   };
 
   return (
-          <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-      <Box textAlign="center" marginBottom={4}>
+          <div>
+      <div>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           DAO Governance
         </Heading>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Participate in governance proposals and vote on protocol changes
         </Text>
-      </Box>
+      </div>
 
       {/* Tab Navigation */}
-      <Box marginBottom={4}>
+      <div>
         <Grid container spacing={2}>
           <Grid item>
             <Button
@@ -211,7 +201,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
             </Button>
           </Grid>
         </Grid>
-      </Box>
+      </div>
 
       {/* Active Proposals */}
       {activeTab === 'proposals' && (
@@ -220,7 +210,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
           {mockProposals.map((proposal) => (
             <ProposalCard key={proposal.id} proposal={proposal} />
           ))}
-        </Box>
+        </div>
       )}
 
       {/* Create Proposal */}
@@ -228,7 +218,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
         <Card className="omni-card">
           <Heading size="lg" marginBottom={3}>Create New Proposal</Heading>
           
-          <Box marginBottom={3}>
+          <div>
             <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Proposal Title</Text>
             <Input
               placeholder="Enter proposal title"
@@ -243,9 +233,9 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
                 color: 'var(--omni-text)',
               }}
             />
-          </Box>
+          </div>
 
-          <Box marginBottom={3}>
+          <div>
             <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Proposal Description</Text>
             <textarea
               placeholder="Describe your proposal in detail..."
@@ -263,7 +253,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
                 fontFamily: 'inherit',
               }}
             />
-          </Box>
+          </div>
 
           <Button
             variant="primary"
@@ -306,14 +296,14 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
             </Grid>
           </Grid>
 
-          <Box marginTop={3}>
+          <div>
             <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
               Expansion management features will be available to DAO members with sufficient voting power.
             </Text>
-          </Box>
+          </div>
         </Card>
       )}
-          </Box>
+          </div>
   );
 };
 
