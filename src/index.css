@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom Omni DAO theme variables */
+:root {
+  --omni-primary: #6366f1;
+  --omni-secondary: #8b5cf6;
+  --omni-accent: #06b6d4;
+  --omni-success: #10b981;
+  --omni-warning: #f59e0b;
+  --omni-error: #ef4444;
+  --omni-background: #0f0f23;
+  --omni-surface: #1a1a2e;
+  --omni-text: #f8fafc;
+  --omni-text-secondary: #94a3b8;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--omni-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--omni-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--omni-secondary);
+} 

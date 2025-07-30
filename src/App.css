@@ -1,0 +1,88 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.main-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Custom Ink Kit theme overrides for Omni DAO */
+.ink\:dark-theme {
+  --ink-button-primary: var(--omni-primary);
+  --ink-button-secondary: var(--omni-secondary);
+  --ink-card-background: var(--omni-surface);
+  --ink-text-primary: var(--omni-text);
+  --ink-text-secondary: var(--omni-text-secondary);
+}
+
+/* Omni DAO specific components */
+.omni-card {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.omni-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+}
+
+.omni-gradient-text {
+  background: linear-gradient(135deg, var(--omni-primary), var(--omni-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.omni-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.omni-stat-card {
+  background: rgba(26, 26, 46, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.omni-stat-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-1px);
+}
+
+.omni-stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--omni-primary);
+  margin-bottom: 0.5rem;
+}
+
+.omni-stat-label {
+  color: var(--omni-text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .omni-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+} 
