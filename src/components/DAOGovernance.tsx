@@ -71,7 +71,7 @@ const DAOGovernance: React.FC = () => {
     const againstPercentage = totalVotes > 0 ? (proposal.votesAgainst / totalVotes * 100).toFixed(1) : '0';
 
     return (
-      <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginBottom: '1rem' }}>
+      <div style={{ marginBottom: '1rem' }}>
         <div>
           <div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--omni-text)' }}>{proposal.title}</h3>
@@ -196,7 +196,7 @@ const DAOGovernance: React.FC = () => {
       </div>
 
       {/* Tab Navigation */}
-      <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginBottom: '2rem' }}>
+      <div style={{ marginBottom: '2rem' }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
           <div>
             <Button

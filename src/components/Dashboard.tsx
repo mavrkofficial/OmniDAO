@@ -53,7 +53,7 @@ const Dashboard: React.FC = () => {
     icon: string;
     onClick: () => void;
   }> = ({ title, description, action, icon, onClick }) => (
-    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ cursor: 'pointer' }} onClick={onClick}>
+    <div style={{ cursor: 'pointer' }} onClick={onClick}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
         <span style={{ fontSize: '1.5rem' }}>{icon}</span>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-text)' }}>{title}</h3>
@@ -185,7 +185,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Connection Status */}
-      <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ 
+      <div style={{ 
         marginTop: '2rem',
         textAlign: 'center',
         background: 'rgba(239, 68, 68, 0.1)',
