@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Heading, Box, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Heading, Button, Input } from '@inkonchain/ink-kit';
 
 interface StakingInterfaceProps {
   isConnected: boolean;

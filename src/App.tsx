@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Box } from '@inkonchain/ink-kit';
+// Removed Box import - using div instead
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { WagmiConfig } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -28,7 +28,7 @@ function App() {
               <div className="App">
                 <Navigation />
                 
-                <Box className="main-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+                <div className="main-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
                   <Routes>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/bonds" element={<BondInterface />} />
@@ -37,7 +37,7 @@ function App() {
                     <Route path="/staking" element={<StakingInterface />} />
                     <Route path="/analytics" element={<RevenueAnalytics />} />
                   </Routes>
-                </Box>
+                </div>
               </div>
             </Router>
           </ChainProvider>

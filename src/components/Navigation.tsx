@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Button, Grid, Text, Box } from '@inkonchain/ink-kit';
+import { Button, Grid, Text } from '@inkonchain/ink-kit';
 import WalletConnect from './WalletConnect';
 
 const Navigation: React.FC = () => {
@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <Box className="omni-navigation" style={{
+    <div className="omni-navigation" style={{
       background: 'rgba(15, 15, 35, 0.9)',
       backdropFilter: 'blur(10px)',
       borderBottom: '1px solid rgba(99, 102, 241, 0.2)',
@@ -28,7 +28,7 @@ const Navigation: React.FC = () => {
       top: 0,
       zIndex: 1000,
     }}>
-      <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
         <Grid container alignItems="center" justifyContent="space-between" style={{ padding: '1rem 0' }}>
           {/* Logo and Brand */}
           <Grid item>
@@ -45,7 +45,7 @@ const Navigation: React.FC = () => {
 
           {/* Navigation Links */}
           <Grid item>
-            <Box display="flex" gap={2} style={{ flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               {navItems.map((item) => (
                 <Link 
                   key={item.path} 
@@ -72,7 +72,7 @@ const Navigation: React.FC = () => {
                   </Button>
                 </Link>
               ))}
-            </Box>
+            </div>
           </Grid>
 
           {/* Wallet Connection */}
@@ -80,8 +80,8 @@ const Navigation: React.FC = () => {
             <WalletConnect />
           </Grid>
         </Grid>
-              </Box>
-    </Box>
+              </div>
+    </div>
   );
 };
 

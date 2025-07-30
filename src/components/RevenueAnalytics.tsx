@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Heading, Box, Button } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Heading, Button } from '@inkonchain/ink-kit';
 
 interface RevenueAnalyticsProps {
   isConnected: boolean;

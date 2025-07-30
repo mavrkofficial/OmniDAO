@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Grid, Text, Heading, Box, Button } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Heading, Button } from '@inkonchain/ink-kit';
 
 interface DashboardProps {
   isConnected: boolean;
@@ -59,7 +59,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
     onClick: () => void;
   }> = ({ title, description, action, icon, onClick }) => (
     <Card className="omni-card" style={{ cursor: 'pointer' }} onClick={onClick}>
-      <Box display="flex" alignItems="center" gap={2} marginBottom={1}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
         <Text style={{ fontSize: '1.5rem' }}>{icon}</Text>
         <Heading size="md">{title}</Heading>
       </Box>
@@ -77,9 +77,9 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
   );
 
   return (
-          <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       {/* Hero Section */}
-      <Box textAlign="center" marginBottom={4}>
+      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           Welcome to Omni DAO
         </Heading>
