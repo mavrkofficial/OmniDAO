@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Button, Input } from '@inkonchain/ink-kit';
 
 interface DAOGovernanceProps {
   isConnected: boolean;
@@ -79,12 +79,12 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
         <div>
           <div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--omni-text)' }}>{proposal.title}</h3>
-            <Text style={{ color: 'var(--omni-text-secondary)', marginBottom: '1rem' }}>
+            <span style={{ color: 'var(--omni-text-secondary)', marginBottom: '1rem' }}>
               {proposal.description}
-            </Text>
+            </span>
           </div>
           <div>
-            <Text style={{ 
+            <span style={{ 
               fontSize: '0.75rem', 
               padding: '0.25rem 0.5rem',
               borderRadius: '4px',
@@ -93,34 +93,34 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
               border: `1px solid ${proposal.status === 'Active' ? 'var(--omni-success)' : 'var(--omni-primary)'}`
             }}>
               {proposal.status}
-            </Text>
+            </span>
           </div>
         </div>
 
         <Grid container spacing={2} marginBottom={2}>
           <Grid item xs={6}>
-            <Text style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Creator</Text>
-            <Text style={{ fontSize: '0.875rem' }}>{proposal.creator}</Text>
+            <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Creator</span>
+            <span style={{ fontSize: '0.875rem' }}>{proposal.creator}</span>
           </Grid>
           <Grid item xs={6}>
-            <Text style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Type</Text>
-            <Text style={{ fontSize: '0.875rem' }}>{proposal.type}</Text>
+            <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Type</span>
+            <span style={{ fontSize: '0.875rem' }}>{proposal.type}</span>
           </Grid>
           <Grid item xs={6}>
-            <Text style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>End Date</Text>
-            <Text style={{ fontSize: '0.875rem' }}>{proposal.endTime}</Text>
+            <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>End Date</span>
+            <span style={{ fontSize: '0.875rem' }}>{proposal.endTime}</span>
           </Grid>
           <Grid item xs={6}>
-            <Text style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Votes</Text>
-            <Text style={{ fontSize: '0.875rem' }}>{totalVotes.toLocaleString()}</Text>
+            <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Votes</span>
+            <span style={{ fontSize: '0.875rem' }}>{totalVotes.toLocaleString()}</span>
           </Grid>
         </Grid>
 
         {/* Vote Progress */}
         <div>
           <div>
-            <Text style={{ fontSize: '0.875rem' }}>For: {proposal.votesFor.toLocaleString()} ({forPercentage}%)</Text>
-            <Text style={{ fontSize: '0.875rem' }}>Against: {proposal.votesAgainst.toLocaleString()} ({againstPercentage}%)</Text>
+            <span style={{ fontSize: '0.875rem' }}>For: {proposal.votesFor.toLocaleString()} ({forPercentage}%)</span>
+            <span style={{ fontSize: '0.875rem' }}>Against: {proposal.votesAgainst.toLocaleString()} ({againstPercentage}%)</span>
           </div>
         </div>
 
@@ -165,9 +165,9 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
         <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           DAO Governance
         </h1>
-        <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
+        <span style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Participate in governance proposals and vote on protocol changes
-        </Text>
+        </span>
       </div>
 
       {/* Tab Navigation */}
@@ -216,7 +216,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
           <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Create New Proposal</h2>
           
           <div>
-            <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Proposal Title</Text>
+            <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Proposal Title</p>
             <Input
               placeholder="Enter proposal title"
               value={proposalTitle}
@@ -233,7 +233,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
           </div>
 
           <div>
-            <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Proposal Description</Text>
+            <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Proposal Description</p>
             <textarea
               placeholder="Describe your proposal in detail..."
               value={proposalDescription}
@@ -274,29 +274,29 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
       {activeTab === 'expansion' && (
         <Card className="omni-card">
           <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Expansion Management</h2>
-          <Text style={{ color: 'var(--omni-text-secondary)', marginBottom: '2rem' }}>
+          <span style={{ color: 'var(--omni-text-secondary)', marginBottom: '2rem' }}>
             Manage protocol expansion parameters and treasury allocation.
-          </Text>
+          </span>
           
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <Card className="omni-stat-card">
-                <Text className="omni-stat-value">$2.5M</Text>
-                <Text className="omni-stat-label">Treasury Balance</Text>
+                <span className="omni-stat-value">$2.5M</span>
+                <span className="omni-stat-label">Treasury Balance</span>
               </Card>
             </Grid>
             <Grid item xs={12} md={6}>
               <Card className="omni-stat-card">
-                <Text className="omni-stat-value">15</Text>
-                <Text className="omni-stat-label">Active Expansions</Text>
+                <span className="omni-stat-value">15</span>
+                <span className="omni-stat-label">Active Expansions</span>
               </Card>
             </Grid>
           </Grid>
 
           <div>
-            <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+            <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
               Expansion management features will be available to DAO members with sufficient voting power.
-            </Text>
+            </span>
           </div>
         </Card>
       )}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Button } from '@inkonchain/ink-kit';
+import { Card, Grid, Button } from '@inkonchain/ink-kit';
 
 interface RevenueAnalyticsProps {
   isConnected: boolean;
@@ -39,25 +39,25 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
     trend 
   }) => (
     <Card className="omni-stat-card">
-      <Text className="omni-stat-value">{value}</Text>
-      <Text className="omni-stat-label">{title}</Text>
+      <span className="omni-stat-value">{value}</span>
+      <span className="omni-stat-label">{title}</span>
       {subtitle && (
-        <Text style={{ 
+        <span style={{ 
           color: 'var(--omni-text-secondary)', 
           fontSize: '0.75rem',
           marginTop: '0.5rem'
         }}>
           {subtitle}
-        </Text>
+        </span>
       )}
       {trend && (
-        <Text style={{ 
+        <span style={{ 
           color: trend.startsWith('+') ? 'var(--omni-success)' : 'var(--omni-error)', 
           fontSize: '0.75rem',
           marginTop: '0.5rem'
         }}>
           {trend}
-        </Text>
+        </span>
       )}
     </Card>
   );
@@ -70,15 +70,15 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
         <div>
           {revenueHistory.map((day, index) => (
             <div key={index}>
-              <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)', marginTop: '0.5rem' }}>
+              <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)', marginTop: '0.5rem' }}>
                 ${day.revenue}
-              </Text>
+              </span>
             </div>
           ))}
         </div>
-        <Text style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)', textAlign: 'center' }}>
+        <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)', textAlign: 'center' }}>
           Last 7 days revenue trend
-        </Text>
+        </span>
       </div>
     </Card>
   );
@@ -90,52 +90,52 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
       <Grid container spacing={2} marginBottom={3}>
         <Grid item xs={12} md={4}>
           <div>
-            <Text style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>
+            <span style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>
               {revenueData.bondRevenue}
-            </Text>
-            <Text style={{ color: 'var(--omni-text-secondary)' }}>Bond Sales</Text>
-            <Text style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+12.5%</Text>
+            </span>
+            <span style={{ color: 'var(--omni-text-secondary)' }}>Bond Sales</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+12.5%</span>
           </div>
         </Grid>
         <Grid item xs={12} md={4}>
           <div>
-            <Text style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-secondary)' }}>
+            <span style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-secondary)' }}>
               {revenueData.tradingFees}
-            </Text>
-            <Text style={{ color: 'var(--omni-text-secondary)' }}>Trading Fees</Text>
-            <Text style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+8.3%</Text>
+            </span>
+            <span style={{ color: 'var(--omni-text-secondary)' }}>Trading Fees</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+8.3%</span>
           </div>
         </Grid>
         <Grid item xs={12} md={4}>
           <div>
-            <Text style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-accent)' }}>
+            <span style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-accent)' }}>
               {revenueData.otherRevenue}
-            </Text>
-            <Text style={{ color: 'var(--omni-text-secondary)' }}>Other Sources</Text>
-            <Text style={{ fontSize: '0.75rem', color: 'var(--omni-error)' }}>-2.1%</Text>
+            </span>
+            <span style={{ color: 'var(--omni-text-secondary)' }}>Other Sources</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--omni-error)' }}>-2.1%</span>
           </div>
         </Grid>
       </Grid>
 
       <div>
-        <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Sources</Text>
+        <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Sources</p>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <div>
-              <Text>Bond Sales</Text>
-              <Text style={{ fontWeight: 'bold' }}>62.9%</Text>
+              <Text>Bond Sales</p>
+              <p style={{ fontWeight: 'bold' }}>62.9%</p>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <div>
-              <Text>Trading Fees</Text>
-              <Text style={{ fontWeight: 'bold' }}>28.3%</Text>
+              <Text>Trading Fees</p>
+              <p style={{ fontWeight: 'bold' }}>28.3%</p>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <div>
-              <Text>Other Sources</Text>
-              <Text style={{ fontWeight: 'bold' }}>8.8%</Text>
+              <Text>Other Sources</p>
+              <p style={{ fontWeight: 'bold' }}>8.8%</p>
             </div>
           </Grid>
         </Grid>
@@ -149,9 +149,9 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
         <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Revenue Analytics
         </h1>
-        <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
+        <span style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Track real-time revenue sharing and distribution metrics
-        </Text>
+        </span>
       </div>
 
       {/* Timeframe Selector */}
@@ -229,19 +229,19 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <div>
-                  <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Distribution</Text>
+                  <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Distribution</p>
                   <div>
                     <div>
-                      <Text>To Stakers</Text>
-                      <Text style={{ fontWeight: 'bold' }}>85%</Text>
+                      <Text>To Stakers</p>
+                      <p style={{ fontWeight: 'bold' }}>85%</p>
                     </div>
                     <div>
-                      <Text>To Treasury</Text>
-                      <Text style={{ fontWeight: 'bold' }}>10%</Text>
+                      <Text>To Treasury</p>
+                      <p style={{ fontWeight: 'bold' }}>10%</p>
                     </div>
                     <div>
-                      <Text>To Team</Text>
-                      <Text style={{ fontWeight: 'bold' }}>5%</Text>
+                      <Text>To Team</p>
+                      <p style={{ fontWeight: 'bold' }}>5%</p>
                     </div>
                   </div>
                 </div>
@@ -249,14 +249,14 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
 
               <Grid item xs={12} md={6}>
                 <div>
-                  <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Recent Distributions</Text>
+                  <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Recent Distributions</p>
                   <div>
                    {revenueHistory.slice(-5).reverse().map((day, index) => (
                      <div key={index}>
-                       <Text style={{ fontSize: '0.875rem' }}>{day.date}</Text>
-                       <Text style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
+                       <span style={{ fontSize: '0.875rem' }}>{day.date}</span>
+                       <span style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
                          ${day.revenue.toLocaleString()}
-                       </Text>
+                       </span>
                      </div>
                    ))}
                  </div>

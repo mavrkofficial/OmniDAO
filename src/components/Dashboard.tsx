@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Grid, Text, Button } from '@inkonchain/ink-kit';
+import { Card, Grid, Button } from '@inkonchain/ink-kit';
 
 interface DashboardProps {
   isConnected: boolean;
@@ -37,16 +37,16 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
     subtitle 
   }) => (
     <Card className="omni-stat-card">
-      <Text className="omni-stat-value">{value}</Text>
-      <Text className="omni-stat-label">{title}</Text>
+      <span className="omni-stat-value">{value}</span>
+      <span className="omni-stat-label">{title}</span>
       {subtitle && (
-        <Text style={{ 
+        <span style={{ 
           color: 'var(--omni-text-secondary)', 
           fontSize: '0.75rem',
           marginTop: '0.5rem'
         }}>
           {subtitle}
-        </Text>
+        </span>
       )}
     </Card>
   );
@@ -60,16 +60,16 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
   }> = ({ title, description, action, icon, onClick }) => (
     <Card className="omni-card" style={{ cursor: 'pointer' }} onClick={onClick}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-        <Text style={{ fontSize: '1.5rem' }}>{icon}</Text>
+        <span style={{ fontSize: '1.5rem' }}>{icon}</span>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-text)' }}>{title}</h3>
       </div>
-      <Text style={{ 
+      <span style={{ 
         color: 'var(--omni-text-secondary)', 
         marginBottom: '1rem',
         fontSize: '0.875rem'
       }}>
         {description}
-      </Text>
+      </span>
       <Button variant="primary" size="sm">
         {action}
       </Button>
@@ -83,7 +83,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
         <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Welcome to Omni DAO
         </h1>
-        <Text style={{ 
+        <span style={{ 
           color: 'var(--omni-text-secondary)', 
           fontSize: '1.125rem',
           maxWidth: '600px',
@@ -91,7 +91,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
         }}>
           Fully modular, DAO-governed liquidity infrastructure protocol for Ink L2. 
           Experience the revolutionary deflationary mechanism disguised as inflation.
-        </Text>
+        </span>
       </div>
 
       {/* Stats Grid */}
@@ -197,12 +197,12 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
           background: 'rgba(239, 68, 68, 0.1)',
           border: '1px solid var(--omni-error)'
         }}>
-          <Text style={{ color: 'var(--omni-error)', marginBottom: '1rem' }}>
+          <span style={{ color: 'var(--omni-error)', marginBottom: '1rem' }}>
             ⚠️ Connect your wallet to interact with Omni DAO
-          </Text>
-          <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+          </span>
+          <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
             You need to connect your wallet to access all features and view your personal data.
-          </Text>
+          </span>
         </Card>
       )}
     </div>

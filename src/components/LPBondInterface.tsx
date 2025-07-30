@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Button, Input } from '@inkonchain/ink-kit';
 
 interface LPBondInterfaceProps {
   isConnected: boolean;
@@ -71,9 +71,9 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
         <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           LP Bond Interface
         </h1>
-        <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
+        <span style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Acquire LP positions with supply neutralization for optimal liquidity management
-        </Text>
+        </span>
       </div>
 
       <Grid container spacing={4}>
@@ -84,7 +84,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
             
             {/* Pool Selection */}
             <div>
-              <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Select LP Pool</Text>
+              <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Select LP Pool</p>
               <Grid container spacing={2}>
                 {lpPools.map((pool) => (
                   <Grid item xs={12} sm={6} md={4} key={pool.symbol}>
@@ -98,20 +98,20 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                       onClick={() => handlePoolSelect(pool.symbol)}
                     >
                       <div>
-                        <Text style={{ fontSize: '1.5rem' }}>{pool.icon}</Text>
+                        <span style={{ fontSize: '1.5rem' }}>{pool.icon}</span>
                         <div>
-                          <Text style={{ fontWeight: 'bold' }}>{pool.symbol}</Text>
-                          <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>{pool.name}</Text>
+                          <p style={{ fontWeight: 'bold' }}>{pool.symbol}</p>
+                          <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>{pool.name}</span>
                         </div>
                       </div>
                       <Grid container spacing={1}>
                         <Grid item xs={6}>
-                          <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>TVL</Text>
-                          <Text style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>{pool.tvl}</Text>
+                          <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>TVL</span>
+                          <span style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>{pool.tvl}</span>
                         </Grid>
                         <Grid item xs={6}>
-                          <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>APY</Text>
-                          <Text style={{ fontSize: '0.875rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{pool.apy}</Text>
+                          <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>APY</span>
+                          <span style={{ fontSize: '0.875rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{pool.apy}</span>
                         </Grid>
                       </Grid>
                     </Card>
@@ -122,7 +122,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
 
             {/* Amount Input */}
             <div>
-              <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Provide</Text>
+              <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Provide</p>
               <Input
                 type="number"
                 placeholder="Enter amount"
@@ -145,16 +145,16 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <Card className="omni-stat-card">
-                    <Text className="omni-stat-value">{lpTokens}</Text>
-                    <Text className="omni-stat-label">LP Tokens</Text>
+                    <span className="omni-stat-value">{lpTokens}</span>
+                    <span className="omni-stat-label">LP Tokens</span>
                   </Card>
                 </Grid>
                 <Grid item xs={6}>
                   <Card className="omni-stat-card">
-                    <Text className="omni-stat-value" style={{ color: 'var(--omni-success)' }}>
+                    <span className="omni-stat-value" style={{ color: 'var(--omni-success)' }}>
                       {neutralization}
-                    </Text>
-                    <Text className="omni-stat-label">Supply Status</Text>
+                    </span>
+                    <span className="omni-stat-label">Supply Status</span>
                   </Card>
                 </Grid>
               </Grid>
@@ -185,30 +185,30 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>LP Bond Information</h3>
             
             <div>
-              <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Supply Neutralization</Text>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Supply Neutralization</p>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 LP bonds automatically neutralize supply impact by minting and burning tokens strategically.
-              </Text>
+              </span>
             </div>
 
             <div>
-              <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Vesting Period</Text>
-              <Text style={{ color: 'var(--omni-text-secondary)' }}>14 days linear vesting</Text>
+              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Vesting Period</p>
+              <span style={{ color: 'var(--omni-text-secondary)' }}>14 days linear vesting</span>
             </div>
 
             <div>
-              <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Minimum Bond</Text>
-              <Text style={{ color: 'var(--omni-text-secondary)' }}>0.1 ETH equivalent</Text>
+              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Minimum Bond</p>
+              <span style={{ color: 'var(--omni-text-secondary)' }}>0.1 ETH equivalent</span>
             </div>
 
             <div>
-              <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>LP Bond Benefits</Text>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>LP Bond Benefits</p>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 • Earn trading fees from LP positions<br/>
                 • Supply neutralization reduces price impact<br/>
                 • Higher APY than regular bonds<br/>
                 • Liquidity provision rewards
-              </Text>
+              </span>
             </div>
           </Card>
 
@@ -216,10 +216,10 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
           <Card className="omni-card" style={{ marginTop: '1rem' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Your LP Bonds</h3>
             <div>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 No active LP bonds found.<br/>
                 Connect your wallet to see your LP bond history.
-              </Text>
+              </span>
             </div>
           </Card>
         </Grid>

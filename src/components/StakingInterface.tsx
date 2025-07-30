@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Button, Input } from '@inkonchain/ink-kit';
 
 interface StakingInterfaceProps {
   isConnected: boolean;
@@ -72,16 +72,16 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
     subtitle 
   }) => (
     <Card className="omni-stat-card">
-      <Text className="omni-stat-value">{value}</Text>
-      <Text className="omni-stat-label">{title}</Text>
+      <span className="omni-stat-value">{value}</span>
+      <span className="omni-stat-label">{title}</span>
       {subtitle && (
-        <Text style={{ 
+        <span style={{ 
           color: 'var(--omni-text-secondary)', 
           fontSize: '0.75rem',
           marginTop: '0.5rem'
         }}>
           {subtitle}
-        </Text>
+        </span>
       )}
     </Card>
   );
@@ -92,9 +92,9 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
         <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Staking Interface
         </h1>
-        <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
+        <span style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Stake your OMNI tokens to earn sOMNI and receive revenue distributions
-        </Text>
+        </span>
       </div>
 
       {/* User Stats */}
@@ -133,7 +133,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Stake OMNI</h2>
             
             <div>
-              <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Stake</Text>
+              <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Stake</p>
               <Input
                 type="number"
                 placeholder="Enter amount"
@@ -151,12 +151,12 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
             </div>
 
             <div>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 • 1:1 conversion rate (1 OMNI = 1 sOMNI)<br/>
                 • Start earning rewards immediately<br/>
                 • No lock-up period<br/>
                 • Revenue sharing enabled
-              </Text>
+              </span>
             </div>
 
             <Button
@@ -183,7 +183,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Unstake sOMNI</h2>
             
             <div>
-              <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Unstake</Text>
+              <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Unstake</p>
               <Input
                 type="number"
                 placeholder="Enter amount"
@@ -201,12 +201,12 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
             </div>
 
             <div>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 • 1:1 conversion rate (1 sOMNI = 1 OMNI)<br/>
                 • No unstaking penalty<br/>
                 • Immediate withdrawal<br/>
                 • Keep earned rewards
-              </Text>
+              </span>
             </div>
 
             <Button
@@ -235,18 +235,18 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
             <Grid container spacing={3} alignItems="center">
               <Grid item xs={12} md={8}>
                 <div>
-                  <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Available Rewards</Text>
-                  <Text style={{ 
+                  <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Available Rewards</p>
+                  <span style={{ 
                     fontSize: '2rem', 
                     fontWeight: 'bold', 
                     color: 'var(--omni-success)',
                     marginBottom: '1rem'
                   }}>
                     {claimAmount} OMNI
-                  </Text>
-                  <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+                  </span>
+                  <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                     Revenue distributions from protocol fees and bond sales
-                  </Text>
+                  </span>
                 </div>
               </Grid>
               <Grid item xs={12} md={4}>
@@ -278,38 +278,38 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <div>
-              <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>How Staking Works</Text>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>How Staking Works</p>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 When you stake OMNI tokens, you receive sOMNI (staked OMNI) tokens in return. 
                 These sOMNI tokens represent your share of the protocol's revenue and allow you 
                 to participate in governance decisions.
-              </Text>
+              </span>
             </div>
 
             <div>
-              <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Revenue Distribution</Text>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Revenue Distribution</p>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 Protocol revenue from bond sales, trading fees, and other sources is distributed 
                 proportionally to all sOMNI holders. You can claim your rewards at any time.
-              </Text>
+              </span>
             </div>
           </Grid>
 
           <Grid item xs={12} md={6}>
             <div>
-              <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Governance Rights</Text>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Governance Rights</p>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 sOMNI tokens grant you voting rights in DAO governance proposals. The more sOMNI 
                 you hold, the more influence you have in protocol decisions.
-              </Text>
+              </span>
             </div>
 
             <div>
-              <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Risk Considerations</Text>
-              <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Risk Considerations</p>
+              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 Staking involves smart contract risk. While the protocol is designed to be secure, 
                 always do your own research and only stake what you can afford to lose.
-              </Text>
+              </span>
             </div>
           </Grid>
         </Grid>

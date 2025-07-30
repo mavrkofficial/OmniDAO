@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Button, Grid, Text } from '@inkonchain/ink-kit';
+import { Button, Grid } from '@inkonchain/ink-kit';
 import WalletConnect from './WalletConnect';
 
 const Navigation: React.FC = () => {
@@ -33,13 +33,13 @@ const Navigation: React.FC = () => {
           {/* Logo and Brand */}
           <Grid item>
             <Link to="/" style={{ textDecoration: 'none' }}>
-              <Text className="omni-gradient-text" style={{ 
+              <span className="omni-gradient-text" style={{ 
                 fontSize: '1.5rem', 
                 fontWeight: 'bold',
                 cursor: 'pointer'
               }}>
                 🚀 Omni DAO
-              </Text>
+              </span>
             </Link>
           </Grid>
 
