@@ -62,7 +62,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
         <Text style={{ fontSize: '1.5rem' }}>{icon}</Text>
         <Heading size="md">{title}</Heading>
-      </Box>
+      </div>
       <Text style={{ 
         color: 'var(--omni-text-secondary)', 
         marginBottom: '1rem',
@@ -77,7 +77,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
   );
 
   return (
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       {/* Hero Section */}
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
@@ -92,7 +92,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
           Fully modular, DAO-governed liquidity infrastructure protocol for Ink L2. 
           Experience the revolutionary deflationary mechanism disguised as inflation.
         </Text>
-      </Box>
+      </div>
 
       {/* Stats Grid */}
       <div className="omni-stats-grid">
@@ -129,7 +129,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
       </div>
 
       {/* Quick Actions */}
-      <Box marginTop={4}>
+      <div style={{ marginTop: '2rem' }}>
         <Heading size="lg" marginBottom={3}>Quick Actions</Heading>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={4}>
@@ -187,7 +187,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
             />
           </Grid>
         </Grid>
-      </Box>
+      </div>
 
       {/* Connection Status */}
       {!isConnected && (
@@ -205,7 +205,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
           </Text>
         </Card>
       )}
-          </Box>
+    </div>
   );
 };
 

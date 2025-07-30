@@ -47,15 +47,15 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
   };
 
   return (
-    <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-      <Box textAlign="center" marginBottom={4}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           Bond Interface
         </Heading>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Purchase OMNI tokens at a discount through our sophisticated multi-currency bonding mechanism
         </Text>
-      </Box>
+      </div>
 
       <Grid container spacing={4}>
         {/* Bond Creation */}
@@ -64,7 +64,7 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
             <Heading size="lg" marginBottom={3}>Create New Bond</Heading>
             
             {/* Token Selection */}
-            <Box marginBottom={3}>
+            <div style={{ marginBottom: '1.5rem' }}>
               <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Select Bond Token</Text>
               <Grid container spacing={2}>
                 {bondTokens.map((token) => (
@@ -86,10 +86,10 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
                   </Grid>
                 ))}
               </Grid>
-            </Box>
+            </div>
 
             {/* Amount Input */}
-            <Box marginBottom={3}>
+            <div style={{ marginBottom: '1.5rem' }}>
               <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Bond</Text>
               <Input
                 type="number"
@@ -106,10 +106,10 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
                   color: 'var(--omni-text)',
                 }}
               />
-            </Box>
+            </div>
 
             {/* Bond Details */}
-            <Box marginBottom={3}>
+            <div style={{ marginBottom: '1.5rem' }}>
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <Card className="omni-stat-card">
@@ -124,7 +124,7 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
                   </Card>
                 </Grid>
               </Grid>
-            </Box>
+            </div>
 
             {/* Create Bond Button */}
             <Button
@@ -150,22 +150,22 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
           <Card className="omni-card">
             <Heading size="md" marginBottom={3}>Bond Information</Heading>
             
-            <Box marginBottom={3}>
+            <div style={{ marginBottom: '1.5rem' }}>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Vesting Period</Text>
               <Text style={{ color: 'var(--omni-text-secondary)' }}>7 days linear vesting</Text>
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div style={{ marginBottom: '1.5rem' }}>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Minimum Bond</Text>
               <Text style={{ color: 'var(--omni-text-secondary)' }}>0.01 {selectedToken}</Text>
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div style={{ marginBottom: '1.5rem' }}>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Maximum Bond</Text>
               <Text style={{ color: 'var(--omni-text-secondary)' }}>No limit</Text>
-            </Box>
+            </div>
 
-            <Box marginBottom={3}>
+            <div style={{ marginBottom: '1.5rem' }}>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Bond Terms</Text>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 • Bonds are non-transferable during vesting<br/>
@@ -173,22 +173,22 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
                 • Revenue sharing starts immediately<br/>
                 • No early withdrawal penalty
               </Text>
-            </Box>
+            </div>
           </Card>
 
           {/* Recent Bonds */}
           <Card className="omni-card" style={{ marginTop: '1rem' }}>
             <Heading size="md" marginBottom={3}>Recent Bonds</Heading>
-            <Box>
+            <div>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 No recent bonds to display.<br/>
                 Connect your wallet to see your bond history.
               </Text>
-            </Box>
+            </div>
           </Card>
         </Grid>
       </Grid>
-    </Box>
+    </div>
   );
 };
 
