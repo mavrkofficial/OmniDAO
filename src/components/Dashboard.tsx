@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Container, Grid, Text, Heading, Box, Button } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Heading, Box, Button } from '@inkonchain/ink-kit';
 
 interface DashboardProps {
   isConnected: boolean;
@@ -77,7 +77,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
   );
 
   return (
-    <Container maxWidth="xl">
+          <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       {/* Hero Section */}
       <Box textAlign="center" marginBottom={4}>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
@@ -205,7 +205,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
           </Text>
         </Card>
       )}
-    </Container>
+          </Box>
   );
 };
 

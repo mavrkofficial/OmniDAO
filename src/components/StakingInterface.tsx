@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Container, Grid, Text, Heading, Box, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Heading, Box, Button, Input } from '@inkonchain/ink-kit';
 
 interface StakingInterfaceProps {
   isConnected: boolean;
@@ -87,7 +87,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
   );
 
   return (
-    <Container maxWidth="xl">
+    <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       <Box textAlign="center" marginBottom={4}>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           Staking Interface
@@ -314,7 +314,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
           </Grid>
         </Grid>
       </Card>
-    </Container>
+    </Box>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Container, Grid, Text, Heading, Box, Button } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Heading, Box, Button } from '@inkonchain/ink-kit';
 
 interface RevenueAnalyticsProps {
   isConnected: boolean;
@@ -195,7 +195,7 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
   );
 
   return (
-    <Container maxWidth="xl">
+          <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       <Box textAlign="center" marginBottom={4}>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           Revenue Analytics
@@ -360,7 +360,7 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
           </Card>
         </Grid>
       </Grid>
-    </Container>
+          </Box>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Container, Grid, Text, Heading, Box, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Heading, Box, Button, Input } from '@inkonchain/ink-kit';
 
 interface DAOGovernanceProps {
   isConnected: boolean;
@@ -173,7 +173,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
   };
 
   return (
-    <Container maxWidth="xl">
+          <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       <Box textAlign="center" marginBottom={4}>
         <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
           DAO Governance
@@ -313,7 +313,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
           </Box>
         </Card>
       )}
-    </Container>
+          </Box>
   );
 };
 
