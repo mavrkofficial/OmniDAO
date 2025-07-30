@@ -236,45 +236,32 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
                       <Text style={{ fontWeight: 'bold' }}>85%</Text>
                     </div>
                     <div>
-                      <div>
-                    </div>
-                  </div>
-                  <div>
-                    <div>
                       <Text>To Treasury</Text>
                       <Text style={{ fontWeight: 'bold' }}>10%</Text>
                     </div>
                     <div>
-                      <div>
+                      <Text>To Team</Text>
+                      <Text style={{ fontWeight: 'bold' }}>5%</Text>
                     </div>
                   </div>
-                                     <div>
-                     <div>
-                       <Text>To Team</Text>
-                       <Text style={{ fontWeight: 'bold' }}>5%</Text>
-                     </div>
-                     <div>
-                       <div>
-                     </div>
-                   </div>
                 </div>
               </Grid>
 
               <Grid item xs={12} md={6}>
-                                 <div>
-                   <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Recent Distributions</Text>
-                   <div>
-                    {revenueHistory.slice(-5).reverse().map((day, index) => (
-                      <div>
-                        <Text style={{ fontSize: '0.875rem' }}>{day.date}</Text>
-                        <Text style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
-                          ${day.revenue.toLocaleString()}
-                        </Text>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Grid>
+                <div>
+                  <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Recent Distributions</Text>
+                  <div>
+                   {revenueHistory.slice(-5).reverse().map((day, index) => (
+                     <div key={index}>
+                       <Text style={{ fontSize: '0.875rem' }}>{day.date}</Text>
+                       <Text style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
+                         ${day.revenue.toLocaleString()}
+                       </Text>
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             </Grid>
             </Grid>
           </Card>
         </Grid>
