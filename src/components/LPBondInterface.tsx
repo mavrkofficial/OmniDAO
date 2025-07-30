@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Heading, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Button, Input } from '@inkonchain/ink-kit';
 
 interface LPBondInterfaceProps {
   isConnected: boolean;
@@ -68,9 +68,9 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
   return (
     <div>
       <div>
-        <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
+        <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           LP Bond Interface
-        </Heading>
+        </h1>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Acquire LP positions with supply neutralization for optimal liquidity management
         </Text>
@@ -80,7 +80,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
         {/* LP Bond Creation */}
         <Grid item xs={12} md={8}>
           <Card className="omni-card">
-            <Heading size="lg" marginBottom={3}>Create LP Bond</Heading>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Create LP Bond</h2>
             
             {/* Pool Selection */}
             <div>
@@ -182,7 +182,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
         {/* LP Bond Information */}
         <Grid item xs={12} md={4}>
           <Card className="omni-card">
-            <Heading size="md" marginBottom={3}>LP Bond Information</Heading>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>LP Bond Information</h3>
             
             <div>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Supply Neutralization</Text>
@@ -214,7 +214,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
 
           {/* LP Bond History */}
           <Card className="omni-card" style={{ marginTop: '1rem' }}>
-            <Heading size="md" marginBottom={3}>Your LP Bonds</Heading>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Your LP Bonds</h3>
             <div>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 No active LP bonds found.<br/>

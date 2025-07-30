@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Grid, Text, Heading, Button } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Button } from '@inkonchain/ink-kit';
 
 interface DashboardProps {
   isConnected: boolean;
@@ -61,7 +61,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
     <Card className="omni-card" style={{ cursor: 'pointer' }} onClick={onClick}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
         <Text style={{ fontSize: '1.5rem' }}>{icon}</Text>
-        <Heading size="md">{title}</Heading>
+        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-text)' }}>{title}</h3>
       </div>
       <Text style={{ 
         color: 'var(--omni-text-secondary)', 
@@ -80,9 +80,9 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       {/* Hero Section */}
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
+        <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Welcome to Omni DAO
-        </Heading>
+        </h1>
         <Text style={{ 
           color: 'var(--omni-text-secondary)', 
           fontSize: '1.125rem',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Heading, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Button, Input } from '@inkonchain/ink-kit';
 
 interface StakingInterfaceProps {
   isConnected: boolean;
@@ -89,9 +89,9 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
+        <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Staking Interface
-        </Heading>
+        </h1>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Stake your OMNI tokens to earn sOMNI and receive revenue distributions
         </Text>
@@ -130,7 +130,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
         {/* Stake OMNI */}
         <Grid item xs={12} md={6}>
           <Card className="omni-card">
-            <Heading size="lg" marginBottom={3}>Stake OMNI</Heading>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Stake OMNI</h2>
             
             <div>
               <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Stake</Text>
@@ -180,7 +180,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
         {/* Unstake sOMNI */}
         <Grid item xs={12} md={6}>
           <Card className="omni-card">
-            <Heading size="lg" marginBottom={3}>Unstake sOMNI</Heading>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Unstake sOMNI</h2>
             
             <div>
               <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Unstake</Text>
@@ -230,7 +230,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
         {/* Claim Rewards */}
         <Grid item xs={12}>
           <Card className="omni-card">
-            <Heading size="lg" marginBottom={3}>Claim Rewards</Heading>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Claim Rewards</h2>
             
             <Grid container spacing={3} alignItems="center">
               <Grid item xs={12} md={8}>
@@ -273,7 +273,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
 
       {/* Staking Information */}
       <Card className="omni-card" style={{ marginTop: '2rem' }}>
-        <Heading size="lg" marginBottom={3}>Staking Information</Heading>
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Staking Information</h2>
         
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>

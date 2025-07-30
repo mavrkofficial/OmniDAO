@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Heading, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Button, Input } from '@inkonchain/ink-kit';
 
 interface DAOGovernanceProps {
   isConnected: boolean;
@@ -78,7 +78,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
       <Card className="omni-card" style={{ marginBottom: '1rem' }}>
         <div>
           <div>
-            <Heading size="md" marginBottom={1}>{proposal.title}</Heading>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--omni-text)' }}>{proposal.title}</h3>
             <Text style={{ color: 'var(--omni-text-secondary)', marginBottom: '1rem' }}>
               {proposal.description}
             </Text>
@@ -162,9 +162,9 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
   return (
           <div>
       <div>
-        <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
+        <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           DAO Governance
-        </Heading>
+        </h1>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Participate in governance proposals and vote on protocol changes
         </Text>
@@ -203,7 +203,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
       {/* Active Proposals */}
       {activeTab === 'proposals' && (
         <div>
-          <Heading size="lg" marginBottom={3}>Active Proposals</Heading>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Active Proposals</h2>
           {mockProposals.map((proposal) => (
             <ProposalCard key={proposal.id} proposal={proposal} />
           ))}
@@ -213,7 +213,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
       {/* Create Proposal */}
       {activeTab === 'create' && (
         <Card className="omni-card">
-          <Heading size="lg" marginBottom={3}>Create New Proposal</Heading>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Create New Proposal</h2>
           
           <div>
             <Text style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Proposal Title</Text>
@@ -273,7 +273,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
       {/* Expansion Management */}
       {activeTab === 'expansion' && (
         <Card className="omni-card">
-          <Heading size="lg" marginBottom={3}>Expansion Management</Heading>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Expansion Management</h2>
           <Text style={{ color: 'var(--omni-text-secondary)', marginBottom: '2rem' }}>
             Manage protocol expansion parameters and treasury allocation.
           </Text>

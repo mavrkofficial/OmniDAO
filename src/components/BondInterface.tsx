@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Heading, Button, Input } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Button, Input } from '@inkonchain/ink-kit';
 
 interface BondInterfaceProps {
   isConnected: boolean;
@@ -49,9 +49,9 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
+        <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Bond Interface
-        </Heading>
+        </h1>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Purchase OMNI tokens at a discount through our sophisticated multi-currency bonding mechanism
         </Text>
@@ -61,7 +61,7 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
         {/* Bond Creation */}
         <Grid item xs={12} md={8}>
           <Card className="omni-card">
-            <Heading size="lg" marginBottom={3}>Create New Bond</Heading>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Create New Bond</h2>
             
             {/* Token Selection */}
             <div style={{ marginBottom: '1.5rem' }}>
@@ -148,7 +148,7 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
         {/* Bond Information */}
         <Grid item xs={12} md={4}>
           <Card className="omni-card">
-            <Heading size="md" marginBottom={3}>Bond Information</Heading>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Bond Information</h3>
             
             <div style={{ marginBottom: '1.5rem' }}>
               <Text style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Vesting Period</Text>
@@ -178,7 +178,7 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
 
           {/* Recent Bonds */}
           <Card className="omni-card" style={{ marginTop: '1rem' }}>
-            <Heading size="md" marginBottom={3}>Recent Bonds</Heading>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Recent Bonds</h3>
             <div>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 No recent bonds to display.<br/>

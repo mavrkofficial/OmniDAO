@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Text, Heading, Button } from '@inkonchain/ink-kit';
+import { Card, Grid, Text, Button } from '@inkonchain/ink-kit';
 
 interface RevenueAnalyticsProps {
   isConnected: boolean;
@@ -64,7 +64,7 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
 
   const RevenueChart: React.FC = () => (
     <Card className="omni-card">
-      <Heading size="lg" marginBottom={3}>Revenue Trend</Heading>
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Revenue Trend</h2>
       <div>
         {/* Mock chart - in real app, this would be a proper chart library */}
         <div>
@@ -85,7 +85,7 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
 
   const RevenueBreakdown: React.FC = () => (
     <Card className="omni-card">
-      <Heading size="lg" marginBottom={3}>Revenue Breakdown</Heading>
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Revenue Breakdown</h2>
       
       <Grid container spacing={2} marginBottom={3}>
         <Grid item xs={12} md={4}>
@@ -146,9 +146,9 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
   return (
           <div>
       <div>
-        <Heading size="xl" className="omni-gradient-text" marginBottom={2}>
+        <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           Revenue Analytics
-        </Heading>
+        </h1>
         <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
           Track real-time revenue sharing and distribution metrics
         </Text>
@@ -224,7 +224,7 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
         {/* Distribution Details */}
         <Grid item xs={12}>
           <Card className="omni-card">
-            <Heading size="lg" marginBottom={3}>Distribution Details</Heading>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Distribution Details</h2>
             
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
