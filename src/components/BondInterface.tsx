@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Button, Input } from '@inkonchain/ink-kit';
+import { Button } from '@inkonchain/ink-kit';
 
 interface BondInterfaceProps {
   isConnected: boolean;
@@ -57,20 +57,19 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
         </span>
       </div>
 
-      <Grid container spacing={4}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={4}>
         {/* Bond Creation */}
-        <Grid item xs={12} md={8}>
-          <Card className="omni-card">
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Create New Bond</h2>
             
             {/* Token Selection */}
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Select Bond Token</p>
-              <Grid container spacing={2}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
                 {bondTokens.map((token) => (
-                  <Grid item xs={6} sm={3} key={token.symbol}>
-                    <Card 
-                      className="omni-card" 
+                  <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6} sm={3} key={token.symbol}>
+                    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" 
                       style={{ 
                         cursor: 'pointer',
                         border: selectedToken === token.symbol ? '2px solid var(--omni-primary)' : '1px solid rgba(99, 102, 241, 0.2)',
@@ -82,10 +81,10 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
                       <span style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{token.icon}</span>
                       <p style={{ fontWeight: 'bold' }}>{token.symbol}</p>
                       <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>{token.name}</span>
-                    </Card>
-                  </Grid>
+                    </div>
+                  </div>
                 ))}
-              </Grid>
+              </div>
             </div>
 
             {/* Amount Input */}
@@ -110,20 +109,20 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
 
             {/* Bond Details */}
             <div style={{ marginBottom: '1.5rem' }}>
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <Card className="omni-stat-card">
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
+                <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
+                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
                     <span className="omni-stat-value">{discount}</span>
                     <span className="omni-stat-label">Discount Rate</span>
-                  </Card>
-                </Grid>
-                <Grid item xs={6}>
-                  <Card className="omni-stat-card">
+                  </div>
+                </div>
+                <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
+                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
                     <span className="omni-stat-value">{bondAmount} OMNI</span>
                     <span className="omni-stat-label">You'll Receive</span>
-                  </Card>
-                </Grid>
-              </Grid>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Create Bond Button */}
@@ -142,12 +141,12 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
             >
               {isConnected ? 'Create Bond' : 'Connect Wallet to Bond'}
             </Button>
-          </Card>
-        </Grid>
+          </div>
+        </div>
 
         {/* Bond Information */}
-        <Grid item xs={12} md={4}>
-          <Card className="omni-card">
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Bond Information</h3>
             
             <div style={{ marginBottom: '1.5rem' }}>
@@ -174,10 +173,10 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
                 • No early withdrawal penalty
               </span>
             </div>
-          </Card>
+          </div>
 
           {/* Recent Bonds */}
-          <Card className="omni-card" style={{ marginTop: '1rem' }}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginTop: '1rem' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Recent Bonds</h3>
             <div>
               <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
@@ -185,9 +184,9 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
                 Connect your wallet to see your bond history.
               </span>
             </div>
-          </Card>
-        </Grid>
-      </Grid>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

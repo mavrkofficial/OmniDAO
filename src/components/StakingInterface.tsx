@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Button, Input } from '@inkonchain/ink-kit';
+import { Button } from '@inkonchain/ink-kit';
 
 interface StakingInterfaceProps {
   isConnected: boolean;
@@ -71,7 +71,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
     value, 
     subtitle 
   }) => (
-    <Card className="omni-stat-card">
+    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
       <span className="omni-stat-value">{value}</span>
       <span className="omni-stat-label">{title}</span>
       {subtitle && (
@@ -83,7 +83,7 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
           {subtitle}
         </span>
       )}
-    </Card>
+    </div>
   );
 
   return (
@@ -126,10 +126,10 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
         />
       </div>
 
-      <Grid container spacing={4} marginTop={2}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={4} marginTop={2}>
         {/* Stake OMNI */}
-        <Grid item xs={12} md={6}>
-          <Card className="omni-card">
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Stake OMNI</h2>
             
             <div>
@@ -174,12 +174,12 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
             >
               {isConnected ? 'Stake OMNI' : 'Connect Wallet to Stake'}
             </Button>
-          </Card>
-        </Grid>
+          </div>
+        </div>
 
         {/* Unstake sOMNI */}
-        <Grid item xs={12} md={6}>
-          <Card className="omni-card">
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Unstake sOMNI</h2>
             
             <div>
@@ -224,16 +224,16 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
             >
               {isConnected ? 'Unstake sOMNI' : 'Connect Wallet to Unstake'}
             </Button>
-          </Card>
-        </Grid>
+          </div>
+        </div>
 
         {/* Claim Rewards */}
-        <Grid item xs={12}>
-          <Card className="omni-card">
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Claim Rewards</h2>
             
-            <Grid container spacing={3} alignItems="center">
-              <Grid item xs={12} md={8}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3} alignItems="center">
+              <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
                 <div>
                   <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Available Rewards</p>
                   <span style={{ 
@@ -248,8 +248,8 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
                     Revenue distributions from protocol fees and bond sales
                   </span>
                 </div>
-              </Grid>
-              <Grid item xs={12} md={4}>
+              </div>
+              <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
                 <Button
                   variant="primary"
                   size="lg"
@@ -265,18 +265,18 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
                 >
                   {isConnected ? 'Claim Rewards' : 'Connect Wallet to Claim'}
                 </Button>
-              </Grid>
-            </Grid>
-          </Card>
-        </Grid>
-      </Grid>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Staking Information */}
-      <Card className="omni-card" style={{ marginTop: '2rem' }}>
+      <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginTop: '2rem' }}>
                     <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Staking Information</h2>
         
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
             <div>
               <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>How Staking Works</p>
               <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
@@ -293,9 +293,9 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
                 proportionally to all sOMNI holders. You can claim your rewards at any time.
               </span>
             </div>
-          </Grid>
+          </div>
 
-          <Grid item xs={12} md={6}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
             <div>
               <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Governance Rights</p>
               <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
@@ -311,9 +311,9 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
                 always do your own research and only stake what you can afford to lose.
               </span>
             </div>
-          </Grid>
-        </Grid>
-      </Card>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

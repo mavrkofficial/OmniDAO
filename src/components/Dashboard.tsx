@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Grid, Button } from '@inkonchain/ink-kit';
+import { Button } from '@inkonchain/ink-kit';
 
 interface DashboardProps {
   isConnected: boolean;
@@ -36,7 +36,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
     value, 
     subtitle 
   }) => (
-    <Card className="omni-stat-card">
+    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
       <span className="omni-stat-value">{value}</span>
       <span className="omni-stat-label">{title}</span>
       {subtitle && (
@@ -48,7 +48,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
           {subtitle}
         </span>
       )}
-    </Card>
+    </div>
   );
 
   const QuickActionCard: React.FC<{ 
@@ -58,7 +58,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
     icon: string;
     onClick: () => void;
   }> = ({ title, description, action, icon, onClick }) => (
-    <Card className="omni-card" style={{ cursor: 'pointer' }} onClick={onClick}>
+    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ cursor: 'pointer' }} onClick={onClick}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
         <span style={{ fontSize: '1.5rem' }}>{icon}</span>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-text)' }}>{title}</h3>
@@ -73,7 +73,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
       <Button variant="primary" size="sm">
         {action}
       </Button>
-    </Card>
+    </div>
   );
 
   return (
@@ -131,8 +131,8 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
       {/* Quick Actions */}
       <div style={{ marginTop: '2rem' }}>
         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Quick Actions</h2>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} lg={4}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
             <QuickActionCard
               title="Create Bond"
               description="Purchase OMNI tokens at a discount through our bonding mechanism"
@@ -140,8 +140,8 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
               icon="🔗"
               onClick={() => window.location.href = '/bonds'}
             />
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
             <QuickActionCard
               title="Stake OMNI"
               description="Stake your OMNI tokens to earn sOMNI and receive revenue distributions"
@@ -149,8 +149,8 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
               icon="💰"
               onClick={() => window.location.href = '/staking'}
             />
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
             <QuickActionCard
               title="DAO Governance"
               description="Participate in governance proposals and vote on protocol changes"
@@ -158,8 +158,8 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
               icon="🗳️"
               onClick={() => window.location.href = '/governance'}
             />
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
             <QuickActionCard
               title="LP Bonds"
               description="Acquire LP positions with supply neutralization"
@@ -167,8 +167,8 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
               icon="🌊"
               onClick={() => window.location.href = '/lp-bonds'}
             />
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
             <QuickActionCard
               title="Revenue Analytics"
               description="Track real-time revenue sharing and distribution metrics"
@@ -176,8 +176,8 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
               icon="📊"
               onClick={() => window.location.href = '/analytics'}
             />
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
             <QuickActionCard
               title="Contract Management"
               description="Universal setter functions for contract owners"
@@ -185,13 +185,13 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
               icon="⚙️"
               onClick={() => alert('Contract management interface coming soon!')}
             />
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       </div>
 
       {/* Connection Status */}
       {!isConnected && (
-        <Card className="omni-card" style={{ 
+        <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ 
           marginTop: '2rem',
           textAlign: 'center',
           background: 'rgba(239, 68, 68, 0.1)',
@@ -203,7 +203,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
           <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
             You need to connect your wallet to access all features and view your personal data.
           </span>
-        </Card>
+        </div>
       )}
     </div>
   );

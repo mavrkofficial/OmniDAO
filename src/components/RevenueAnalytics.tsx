@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Button } from '@inkonchain/ink-kit';
+import { Button } from '@inkonchain/ink-kit';
 
 interface RevenueAnalyticsProps {
   isConnected: boolean;
@@ -38,7 +38,7 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
     subtitle,
     trend 
   }) => (
-    <Card className="omni-stat-card">
+    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
       <span className="omni-stat-value">{value}</span>
       <span className="omni-stat-label">{title}</span>
       {subtitle && (
@@ -59,11 +59,11 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
           {trend}
         </span>
       )}
-    </Card>
+    </div>
   );
 
   const RevenueChart: React.FC = () => (
-    <Card className="omni-card">
+    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
       <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Revenue Trend</h2>
       <div>
         {/* Mock chart - in real app, this would be a proper chart library */}
@@ -80,15 +80,15 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
           Last 7 days revenue trend
         </span>
       </div>
-    </Card>
+    </div>
   );
 
   const RevenueBreakdown: React.FC = () => (
-    <Card className="omni-card">
+    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
       <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Revenue Breakdown</h2>
       
-      <Grid container spacing={2} marginBottom={3}>
-        <Grid item xs={12} md={4}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2} marginBottom={3}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
           <div>
             <span style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>
               {revenueData.bondRevenue}
@@ -96,8 +96,8 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
             <span style={{ color: 'var(--omni-text-secondary)' }}>Bond Sales</span>
             <span style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+12.5%</span>
           </div>
-        </Grid>
-        <Grid item xs={12} md={4}>
+        </div>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
           <div>
             <span style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-secondary)' }}>
               {revenueData.tradingFees}
@@ -105,8 +105,8 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
             <span style={{ color: 'var(--omni-text-secondary)' }}>Trading Fees</span>
             <span style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+8.3%</span>
           </div>
-        </Grid>
-        <Grid item xs={12} md={4}>
+        </div>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
           <div>
             <span style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-accent)' }}>
               {revenueData.otherRevenue}
@@ -114,33 +114,33 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
             <span style={{ color: 'var(--omni-text-secondary)' }}>Other Sources</span>
             <span style={{ fontSize: '0.75rem', color: 'var(--omni-error)' }}>-2.1%</span>
           </div>
-        </Grid>
-      </Grid>
+        </div>
+      </div>
 
       <div>
         <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Sources</p>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
             <div>
               <span>Bond Sales</span>
               <p style={{ fontWeight: 'bold' }}>62.9%</p>
             </div>
-          </Grid>
-          <Grid item xs={12} md={6}>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
             <div>
               <span>Trading Fees</span>
               <p style={{ fontWeight: 'bold' }}>28.3%</p>
             </div>
-          </Grid>
-          <Grid item xs={12} md={6}>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
             <div>
               <span>Other Sources</span>
               <p style={{ fontWeight: 'bold' }}>8.8%</p>
             </div>
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       </div>
-    </Card>
+    </div>
   );
 
   return (
@@ -156,9 +156,9 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
 
       {/* Timeframe Selector */}
       <div>
-        <Grid container justifyContent="center" spacing={2}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} justifyContent="center" spacing={2}>
           {['24h', '7d', '30d', '90d'].map((period) => (
-            <Grid item key={period}>
+            <div style={{ flex: "1 1 300px", minWidth: "300px" }} key={period}>
               <Button
                 variant={timeframe === period ? "primary" : "secondary"}
                 size="sm"
@@ -166,9 +166,9 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
               >
                 {period}
               </Button>
-            </Grid>
+            </div>
           ))}
-        </Grid>
+        </div>
       </div>
 
       {/* Key Metrics */}
@@ -210,24 +210,24 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
         />
       </div>
 
-      <Grid container spacing={4} marginTop={2}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={4} marginTop={2}>
         {/* Revenue Chart */}
-        <Grid item xs={12} md={8}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
           <RevenueChart />
-        </Grid>
+        </div>
 
         {/* Revenue Breakdown */}
-        <Grid item xs={12} md={4}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
           <RevenueBreakdown />
-        </Grid>
+        </div>
 
         {/* Distribution Details */}
-        <Grid item xs={12}>
-          <Card className="omni-card">
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Distribution Details</h2>
             
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={6}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
+              <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
                 <div>
                   <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Distribution</p>
                   <div>
@@ -245,9 +245,9 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
                      </div>
                   </div>
                 </div>
-              </Grid>
+              </div>
 
-              <Grid item xs={12} md={6}>
+              <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
                 <div>
                   <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Recent Distributions</p>
                   <div>
@@ -261,11 +261,11 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
                    ))}
                  </div>
                </div>
-             </Grid>
-            </Grid>
-          </Card>
-        </Grid>
-      </Grid>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
           </div>
   );
 };

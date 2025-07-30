@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Grid, Button, Input } from '@inkonchain/ink-kit';
+import { Button } from '@inkonchain/ink-kit';
 
 interface LPBondInterfaceProps {
   isConnected: boolean;
@@ -76,20 +76,19 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
         </span>
       </div>
 
-      <Grid container spacing={4}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={4}>
         {/* LP Bond Creation */}
-        <Grid item xs={12} md={8}>
-          <Card className="omni-card">
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Create LP Bond</h2>
             
             {/* Pool Selection */}
             <div>
               <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Select LP Pool</p>
-              <Grid container spacing={2}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
                 {lpPools.map((pool) => (
-                  <Grid item xs={12} sm={6} md={4} key={pool.symbol}>
-                    <Card 
-                      className="omni-card" 
+                  <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={4} key={pool.symbol}>
+                    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" 
                       style={{ 
                         cursor: 'pointer',
                         border: selectedPool === pool.symbol ? '2px solid var(--omni-primary)' : '1px solid rgba(99, 102, 241, 0.2)',
@@ -104,20 +103,20 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                           <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>{pool.name}</span>
                         </div>
                       </div>
-                      <Grid container spacing={1}>
-                        <Grid item xs={6}>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={1}>
+                        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
                           <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>TVL</span>
                           <span style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>{pool.tvl}</span>
-                        </Grid>
-                        <Grid item xs={6}>
+                        </div>
+                        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
                           <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>APY</span>
                           <span style={{ fontSize: '0.875rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{pool.apy}</span>
-                        </Grid>
-                      </Grid>
-                    </Card>
-                  </Grid>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 ))}
-              </Grid>
+              </div>
             </div>
 
             {/* Amount Input */}
@@ -142,22 +141,22 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
 
             {/* LP Bond Details */}
             <div>
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <Card className="omni-stat-card">
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
+                <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
+                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
                     <span className="omni-stat-value">{lpTokens}</span>
                     <span className="omni-stat-label">LP Tokens</span>
-                  </Card>
-                </Grid>
-                <Grid item xs={6}>
-                  <Card className="omni-stat-card">
+                  </div>
+                </div>
+                <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
+                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
                     <span className="omni-stat-value" style={{ color: 'var(--omni-success)' }}>
                       {neutralization}
                     </span>
                     <span className="omni-stat-label">Supply Status</span>
-                  </Card>
-                </Grid>
-              </Grid>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Create LP Bond Button */}
@@ -176,12 +175,12 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
             >
               {isConnected ? 'Create LP Bond' : 'Connect Wallet to Bond'}
             </Button>
-          </Card>
-        </Grid>
+          </div>
+        </div>
 
         {/* LP Bond Information */}
-        <Grid item xs={12} md={4}>
-          <Card className="omni-card">
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>LP Bond Information</h3>
             
             <div>
@@ -210,10 +209,10 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                 • Liquidity provision rewards
               </span>
             </div>
-          </Card>
+          </div>
 
           {/* LP Bond History */}
-          <Card className="omni-card" style={{ marginTop: '1rem' }}>
+          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginTop: '1rem' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Your LP Bonds</h3>
             <div>
               <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
@@ -221,9 +220,9 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                 Connect your wallet to see your LP bond history.
               </span>
             </div>
-          </Card>
-        </Grid>
-      </Grid>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

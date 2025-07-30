@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Button, Grid } from '@inkonchain/ink-kit';
+import { Button } from '@inkonchain/ink-kit';
 import WalletConnect from './WalletConnect';
 
 const Navigation: React.FC = () => {
@@ -29,7 +29,7 @@ const Navigation: React.FC = () => {
       zIndex: 1000,
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-        <Grid container alignItems="center" justifyContent="space-between" style={{ padding: '1rem 0' }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} alignItems="center" justifyContent="space-between" style={{ padding: '1rem 0' }}>
           {/* Logo and Brand */}
           <Grid item>
             <Link to="/" style={{ textDecoration: 'none' }}>
@@ -41,7 +41,7 @@ const Navigation: React.FC = () => {
                 🚀 Omni DAO
               </span>
             </Link>
-          </Grid>
+          </div>
 
           {/* Navigation Links */}
           <Grid item>
@@ -73,13 +73,13 @@ const Navigation: React.FC = () => {
                 </Link>
               ))}
             </div>
-          </Grid>
+          </div>
 
           {/* Wallet Connection */}
           <Grid item>
             <WalletConnect />
-          </Grid>
-        </Grid>
+          </div>
+        </div>
               </div>
     </div>
   );
