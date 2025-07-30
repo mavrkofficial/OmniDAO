@@ -69,8 +69,7 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
         {/* Mock chart - in real app, this would be a proper chart library */}
         <div>
           {revenueHistory.map((day, index) => (
-            <div>
-              <div>
+            <div key={index}>
               <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)', marginTop: '0.5rem' }}>
                 ${day.revenue}
               </Text>
