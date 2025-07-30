@@ -17,6 +17,4 @@ export const wagmiConfig = createConfig({
     [polygon.id]: http(),
     [bsc.id]: http(),
   },
-});
-
-export { chains }; 
+}); 

@@ -14,14 +14,14 @@ import StakingInterface from './components/StakingInterface';
 import RevenueAnalytics from './components/RevenueAnalytics';
 import Navigation from './components/Navigation';
 import { ChainProvider } from './contexts/ChainContext';
-import { wagmiConfig, chains } from './config/rainbowkit';
+import { wagmiConfig } from './config/rainbowkit';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider>
         <QueryClientProvider client={queryClient}>
           <ChainProvider>
             <Router>
