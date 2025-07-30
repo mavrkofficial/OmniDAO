@@ -3,14 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button, Container, Grid, Text, Box } from '@inkonchain/ink-kit';
 import WalletConnect from './WalletConnect';
 
-interface NavigationProps {
-  isConnected: boolean;
-  account: string | null;
-  onConnect: () => void;
-  onDisconnect: () => void;
-}
-
-const Navigation: React.FC<NavigationProps> = ({ isConnected, account, onConnect, onDisconnect }) => {
+const Navigation: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
@@ -84,12 +77,7 @@ const Navigation: React.FC<NavigationProps> = ({ isConnected, account, onConnect
 
           {/* Wallet Connection */}
           <Grid item>
-            <WalletConnect
-              isConnected={isConnected}
-              account={account}
-              onConnect={onConnect}
-              onDisconnect={onDisconnect}
-            />
+            <WalletConnect />
           </Grid>
         </Grid>
       </Container>

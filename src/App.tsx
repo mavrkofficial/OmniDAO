@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Button, Card, Container, Grid, Text, Heading, Box } from '@inkonchain/ink-kit';
+import { Container } from '@inkonchain/ink-kit';
+import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { WagmiConfig } from 'wagmi';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import '@rainbow-me/rainbowkit/styles.css';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import BondInterface from './components/BondInterface';
@@ -9,55 +13,37 @@ import DAOGovernance from './components/DAOGovernance';
 import StakingInterface from './components/StakingInterface';
 import RevenueAnalytics from './components/RevenueAnalytics';
 import Navigation from './components/Navigation';
+import { ChainProvider } from './contexts/ChainContext';
+import { wagmiConfig, chains } from './config/rainbowkit';
+
+const queryClient = new QueryClient();
 
 function App() {
-  const [isConnected, setIsConnected] = useState(false);
-  const [account, setAccount] = useState<string | null>(null);
-
-  const connectWallet = async () => {
-    try {
-      if (typeof window.ethereum !== 'undefined') {
-        const accounts = await window.ethereum.request({
-          method: 'eth_requestAccounts',
-        });
-        setAccount(accounts[0]);
-        setIsConnected(true);
-      } else {
-        alert('Please install MetaMask!');
-      }
-    } catch (error) {
-      console.error('Error connecting wallet:', error);
-      throw error; // Re-throw for the WalletConnect component to handle
-    }
-  };
-
-  const disconnectWallet = () => {
-    setAccount(null);
-    setIsConnected(false);
-  };
-
   return (
-    <Router>
-      <div className="App">
-        <Navigation 
-          isConnected={isConnected} 
-          account={account} 
-          onConnect={connectWallet}
-          onDisconnect={disconnectWallet}
-        />
-        
-        <Container maxWidth="xl" className="main-container">
-          <Routes>
-            <Route path="/" element={<Dashboard isConnected={isConnected} account={account} />} />
-            <Route path="/bonds" element={<BondInterface isConnected={isConnected} account={account} />} />
-            <Route path="/lp-bonds" element={<LPBondInterface isConnected={isConnected} account={account} />} />
-            <Route path="/governance" element={<DAOGovernance isConnected={isConnected} account={account} />} />
-            <Route path="/staking" element={<StakingInterface isConnected={isConnected} account={account} />} />
-            <Route path="/analytics" element={<RevenueAnalytics isConnected={isConnected} account={account} />} />
-          </Routes>
-        </Container>
-      </div>
-    </Router>
+    <WagmiConfig config={wagmiConfig}>
+      <RainbowKitProvider chains={chains}>
+        <QueryClientProvider client={queryClient}>
+          <ChainProvider>
+            <Router>
+              <div className="App">
+                <Navigation />
+                
+                <Container maxWidth="xl" className="main-container">
+                  <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/bonds" element={<BondInterface />} />
+                    <Route path="/lp-bonds" element={<LPBondInterface />} />
+                    <Route path="/governance" element={<DAOGovernance />} />
+                    <Route path="/staking" element={<StakingInterface />} />
+                    <Route path="/analytics" element={<RevenueAnalytics />} />
+                  </Routes>
+                </Container>
+              </div>
+            </Router>
+          </ChainProvider>
+        </QueryClientProvider>
+      </RainbowKitProvider>
+    </WagmiConfig>
   );
 }
 
