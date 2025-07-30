@@ -215,7 +215,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
           {/* LP Bond History */}
           <Card className="omni-card" style={{ marginTop: '1rem' }}>
             <Heading size="md" marginBottom={3}>Your LP Bonds</Heading>
-            <Box>
+            <div>
               <Text style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
                 No active LP bonds found.<br/>
                 Connect your wallet to see your LP bond history.

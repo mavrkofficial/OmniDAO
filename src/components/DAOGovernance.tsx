@@ -122,9 +122,6 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
             <Text style={{ fontSize: '0.875rem' }}>For: {proposal.votesFor.toLocaleString()} ({forPercentage}%)</Text>
             <Text style={{ fontSize: '0.875rem' }}>Against: {proposal.votesAgainst.toLocaleString()} ({againstPercentage}%)</Text>
           </div>
-          <div>
-            <div>
-          </div>
         </div>
 
         {/* Vote Buttons */}
@@ -205,7 +202,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
 
       {/* Active Proposals */}
       {activeTab === 'proposals' && (
-        <Box>
+        <div>
           <Heading size="lg" marginBottom={3}>Active Proposals</Heading>
           {mockProposals.map((proposal) => (
             <ProposalCard key={proposal.id} proposal={proposal} />

@@ -126,26 +126,17 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
               <Text>Bond Sales</Text>
               <Text style={{ fontWeight: 'bold' }}>62.9%</Text>
             </div>
-            <div>
-              <div>
-            </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <div>
               <Text>Trading Fees</Text>
               <Text style={{ fontWeight: 'bold' }}>28.3%</Text>
             </div>
-            <div>
-              <div>
-            </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <div>
               <Text>Other Sources</Text>
               <Text style={{ fontWeight: 'bold' }}>8.8%</Text>
-            </div>
-            <div>
-              <div>
             </div>
           </Grid>
         </Grid>
