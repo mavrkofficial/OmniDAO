@@ -77,7 +77,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
     return (
       <Card className="omni-card" style={{ marginBottom: '1rem' }}>
         <div>
-          <Box>
+          <div>
             <Heading size="md" marginBottom={1}>{proposal.title}</Heading>
             <Text style={{ color: 'var(--omni-text-secondary)', marginBottom: '1rem' }}>
               {proposal.description}

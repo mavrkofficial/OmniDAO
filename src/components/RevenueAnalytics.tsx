@@ -258,22 +258,22 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
                       <div>
                     </div>
                   </div>
-                  <Box>
-                    <div>
-                      <Text>To Team</Text>
-                      <Text style={{ fontWeight: 'bold' }}>5%</Text>
-                    </div>
-                    <div>
-                      <div>
-                    </div>
-                  </div>
+                                     <div>
+                     <div>
+                       <Text>To Team</Text>
+                       <Text style={{ fontWeight: 'bold' }}>5%</Text>
+                     </div>
+                     <div>
+                       <div>
+                     </div>
+                   </div>
                 </div>
               </Grid>
 
               <Grid item xs={12} md={6}>
-                <div>
-                  <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Recent Distributions</Text>
-                  <Box>
+                                 <div>
+                   <Text style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Recent Distributions</Text>
+                   <div>
                     {revenueHistory.slice(-5).reverse().map((day, index) => (
                       <div>
                         <Text style={{ fontSize: '0.875rem' }}>{day.date}</Text>

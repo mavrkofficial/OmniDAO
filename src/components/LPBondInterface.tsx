@@ -99,7 +99,7 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                     >
                       <div>
                         <Text style={{ fontSize: '1.5rem' }}>{pool.icon}</Text>
-                        <Box>
+                        <div>
                           <Text style={{ fontWeight: 'bold' }}>{pool.symbol}</Text>
                           <Text style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>{pool.name}</Text>
                         </div>
