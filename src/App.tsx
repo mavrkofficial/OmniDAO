@@ -27,7 +27,13 @@ function App() {
       }
     } catch (error) {
       console.error('Error connecting wallet:', error);
+      throw error; // Re-throw for the WalletConnect component to handle
     }
+  };
+
+  const disconnectWallet = () => {
+    setAccount(null);
+    setIsConnected(false);
   };
 
   return (
@@ -37,6 +43,7 @@ function App() {
           isConnected={isConnected} 
           account={account} 
           onConnect={connectWallet}
+          onDisconnect={disconnectWallet}
         />
         
         <Container maxWidth="xl" className="main-container">

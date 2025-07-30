@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button, Container, Grid, Text, Box } from '@inkonchain/ink-kit';
+import WalletConnect from './WalletConnect';
 
 interface NavigationProps {
   isConnected: boolean;
   account: string | null;
   onConnect: () => void;
+  onDisconnect: () => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ isConnected, account, onConnect }) => {
+const Navigation: React.FC<NavigationProps> = ({ isConnected, account, onConnect, onDisconnect }) => {
   const location = useLocation();
 
   const navItems = [
@@ -82,32 +84,12 @@ const Navigation: React.FC<NavigationProps> = ({ isConnected, account, onConnect
 
           {/* Wallet Connection */}
           <Grid item>
-            {isConnected ? (
-              <Button
-                variant="secondary"
-                size="sm"
-                style={{
-                  backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                  border: '1px solid var(--omni-success)',
-                  color: 'var(--omni-success)',
-                }}
-              >
-                {shortenAddress(account!)}
-              </Button>
-            ) : (
-              <Button
-                onClick={onConnect}
-                variant="primary"
-                size="sm"
-                style={{
-                  background: 'linear-gradient(135deg, var(--omni-primary), var(--omni-secondary))',
-                  border: 'none',
-                  color: 'white',
-                }}
-              >
-                Connect Wallet
-              </Button>
-            )}
+            <WalletConnect
+              isConnected={isConnected}
+              account={account}
+              onConnect={onConnect}
+              onDisconnect={onDisconnect}
+            />
           </Grid>
         </Grid>
       </Container>
