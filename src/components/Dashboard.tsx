@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@inkonchain/ink-kit';
 
-interface DashboardProps {
-  isConnected: boolean;
-  account: string | null;
-}
-
-const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
+const Dashboard: React.FC = () => {
   const [stats, setStats] = useState({
     totalValueLocked: '$0',
     omniTokenPrice: '$0.0005',
@@ -190,21 +185,19 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
       </div>
 
       {/* Connection Status */}
-      {!isConnected && (
-        <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ 
-          marginTop: '2rem',
-          textAlign: 'center',
-          background: 'rgba(239, 68, 68, 0.1)',
-          border: '1px solid var(--omni-error)'
-        }}>
-          <span style={{ color: 'var(--omni-error)', marginBottom: '1rem' }}>
-            ⚠️ Connect your wallet to interact with Omni DAO
-          </span>
-          <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-            You need to connect your wallet to access all features and view your personal data.
-          </span>
-        </div>
-      )}
+      <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ 
+        marginTop: '2rem',
+        textAlign: 'center',
+        background: 'rgba(239, 68, 68, 0.1)',
+        border: '1px solid var(--omni-error)'
+      }}>
+        <span style={{ color: 'var(--omni-error)', marginBottom: '1rem' }}>
+          ⚠️ Connect your wallet to interact with Omni DAO
+        </span>
+        <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
+          You need to connect your wallet to access all features and view your personal data.
+        </span>
+      </div>
     </div>
   );
 };
