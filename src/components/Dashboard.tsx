@@ -130,7 +130,7 @@ const Dashboard: React.FC<DashboardProps> = ({ isConnected, account }) => {
 
       {/* Quick Actions */}
       <div style={{ marginTop: '2rem' }}>
-        <Heading size="lg" marginBottom={3}>Quick Actions</Heading>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Quick Actions</h2>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={4}>
             <QuickActionCard

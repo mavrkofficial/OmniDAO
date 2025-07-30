@@ -122,19 +122,19 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <div>
-              <Text>Bond Sales</p>
+              <span>Bond Sales</span>
               <p style={{ fontWeight: 'bold' }}>62.9%</p>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <div>
-              <Text>Trading Fees</p>
+              <span>Trading Fees</span>
               <p style={{ fontWeight: 'bold' }}>28.3%</p>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
             <div>
-              <Text>Other Sources</p>
+              <span>Other Sources</span>
               <p style={{ fontWeight: 'bold' }}>8.8%</p>
             </div>
           </Grid>
@@ -231,18 +231,18 @@ const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, accoun
                 <div>
                   <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>Revenue Distribution</p>
                   <div>
-                    <div>
-                      <Text>To Stakers</p>
-                      <p style={{ fontWeight: 'bold' }}>85%</p>
-                    </div>
-                    <div>
-                      <Text>To Treasury</p>
-                      <p style={{ fontWeight: 'bold' }}>10%</p>
-                    </div>
-                    <div>
-                      <Text>To Team</p>
-                      <p style={{ fontWeight: 'bold' }}>5%</p>
-                    </div>
+                                         <div>
+                       <span>To Stakers</span>
+                       <p style={{ fontWeight: 'bold' }}>85%</p>
+                     </div>
+                     <div>
+                       <span>To Treasury</span>
+                       <p style={{ fontWeight: 'bold' }}>10%</p>
+                     </div>
+                     <div>
+                       <span>To Team</span>
+                       <p style={{ fontWeight: 'bold' }}>5%</p>
+                     </div>
                   </div>
                 </div>
               </Grid>
