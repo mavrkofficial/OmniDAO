@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from '@inkonchain/ink-kit';
 
-interface BondInterfaceProps {
-  isConnected: boolean;
-  account: string | null;
-}
-
-const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) => {
+const BondInterface: React.FC = () => {
   const [selectedToken, setSelectedToken] = useState('ETH');
   const [amount, setAmount] = useState('');
   const [bondAmount, setBondAmount] = useState('0');
   const [discount, setDiscount] = useState('5.2%');
+  const [isConnected, setIsConnected] = useState(false); // Mock connection state
 
   const bondTokens = [
     { symbol: 'ETH', name: 'Ethereum', icon: '🔷' },

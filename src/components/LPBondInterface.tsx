@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from '@inkonchain/ink-kit';
 
-interface LPBondInterfaceProps {
-  isConnected: boolean;
-  account: string | null;
-}
-
-const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account }) => {
+const LPBondInterface: React.FC = () => {
   const [selectedPool, setSelectedPool] = useState('ETH-USDT');
   const [lpAmount, setLpAmount] = useState('');
   const [bondAmount, setBondAmount] = useState('0');
   const [discount, setDiscount] = useState('8.5%');
+  const [isConnected, setIsConnected] = useState(false); // Mock connection state
 
   const lpPools = [
     { 

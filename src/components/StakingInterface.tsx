@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@inkonchain/ink-kit';
 
-interface StakingInterfaceProps {
-  isConnected: boolean;
-  account: string | null;
-}
-
-const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, account }) => {
+const StakingInterface: React.FC = () => {
   const [stakeAmount, setStakeAmount] = useState('');
   const [unstakeAmount, setUnstakeAmount] = useState('');
   const [claimAmount, setClaimAmount] = useState('0');
+  const [isConnected, setIsConnected] = useState(false); // Mock connection state
 
   const stakingStats = {
     totalStaked: '2,847,500',

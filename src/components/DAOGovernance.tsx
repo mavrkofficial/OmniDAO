@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from '@inkonchain/ink-kit';
 
-interface DAOGovernanceProps {
-  isConnected: boolean;
-  account: string | null;
-}
-
-const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) => {
+const DAOGovernance: React.FC = () => {
+  const [isConnected, setIsConnected] = useState(false); // Mock connection state
   const [activeTab, setActiveTab] = useState('proposals');
   const [proposalTitle, setProposalTitle] = useState('');
   const [proposalDescription, setProposalDescription] = useState('');

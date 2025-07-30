@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@inkonchain/ink-kit';
 
-interface RevenueAnalyticsProps {
-  isConnected: boolean;
-  account: string | null;
-}
-
-const RevenueAnalytics: React.FC<RevenueAnalyticsProps> = ({ isConnected, account }) => {
+const RevenueAnalytics: React.FC = () => {
+  const [isConnected, setIsConnected] = useState(false); // Mock connection state
   const [timeframe, setTimeframe] = useState('7d');
   const [selectedMetric, setSelectedMetric] = useState('revenue');
 
