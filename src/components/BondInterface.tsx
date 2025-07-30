@@ -53,18 +53,18 @@ const BondInterface: React.FC = () => {
         </span>
       </div>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={4}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
         {/* Bond Creation */}
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Create New Bond</h2>
             
             {/* Token Selection */}
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Select Bond Token</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
                 {bondTokens.map((token) => (
-                  <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6} sm={3} key={token.symbol}>
+                  <div style={{ flex: "1 1 300px", minWidth: "300px" }} key={token.symbol}>
                     <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" 
                       style={{ 
                         cursor: 'pointer',
@@ -105,14 +105,14 @@ const BondInterface: React.FC = () => {
 
             {/* Bond Details */}
             <div style={{ marginBottom: '1.5rem' }}>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
-                <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+                <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
                   <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
                     <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Current Discount</span>
                     <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{discount}</div>
                   </div>
                 </div>
-                <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
+                <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
                   <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
                     <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>OMNI to Receive</span>
                     <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{bondAmount}</div>
@@ -140,7 +140,7 @@ const BondInterface: React.FC = () => {
         </div>
 
         {/* Bond Statistics */}
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Bond Statistics</h3>
             

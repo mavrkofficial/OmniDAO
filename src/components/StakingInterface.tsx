@@ -66,9 +66,9 @@ const StakingInterface: React.FC = () => {
         </span>
       </div>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={4}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
         {/* Staking Actions */}
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Stake OMNI</h2>
             
@@ -146,7 +146,7 @@ const StakingInterface: React.FC = () => {
         </div>
 
         {/* Staking Statistics */}
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Your Staking</h3>
             
@@ -187,26 +187,26 @@ const StakingInterface: React.FC = () => {
       {/* Global Staking Statistics */}
       <div style={{ marginTop: '2rem' }}>
         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Global Staking Statistics</h2>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
               <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Staked</span>
               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{stakingStats.totalStaked}</div>
             </div>
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
               <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Stakers</span>
               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{stakingStats.totalStakers}</div>
             </div>
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
               <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Average APY</span>
               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{stakingStats.averageAPY}</div>
             </div>
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
               <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Rewards</span>
               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{stakingStats.totalRewards}</div>

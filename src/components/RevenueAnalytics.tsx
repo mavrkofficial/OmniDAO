@@ -54,29 +54,29 @@ const RevenueAnalytics: React.FC = () => {
       </div>
 
       {/* Revenue Overview */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3} marginBottom={3}>
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Revenue</span>
             <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{revenueData.totalRevenue}</div>
             <span style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>+{revenueData.weeklyGrowth} this week</span>
           </div>
         </div>
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Bond Sales</span>
             <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{revenueData.bondRevenue}</div>
             <span style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>62.9% of total</span>
           </div>
         </div>
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Trading Fees</span>
             <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{revenueData.tradingFees}</div>
             <span style={{ fontSize: '0.75rem', color: 'var(--omni-success)' }}>28.0% of total</span>
           </div>
         </div>
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>LP Fees</span>
             <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{revenueData.lpFees}</div>
@@ -86,8 +86,8 @@ const RevenueAnalytics: React.FC = () => {
       </div>
 
       {/* Revenue Chart */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-text)' }}>Revenue Trend</h3>
@@ -139,7 +139,7 @@ const RevenueAnalytics: React.FC = () => {
         </div>
 
         {/* Distribution Breakdown */}
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Revenue Distribution</h3>
             
@@ -212,22 +212,22 @@ const RevenueAnalytics: React.FC = () => {
       {/* Detailed Metrics */}
       <div style={{ marginTop: '2rem' }}>
         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Detailed Metrics</h2>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={4}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
               <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--omni-text)' }}>Daily Average</h3>
               <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{revenueData.dailyAverage}</div>
               <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Average daily revenue</span>
             </div>
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={4}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
               <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--omni-text)' }}>Weekly Growth</h3>
               <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{revenueData.weeklyGrowth}</div>
               <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Week-over-week growth</span>
             </div>
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={4}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
               <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--omni-text)' }}>Monthly Growth</h3>
               <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{revenueData.monthlyGrowth}</div>

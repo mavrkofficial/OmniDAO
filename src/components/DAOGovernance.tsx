@@ -93,8 +93,8 @@ const DAOGovernance: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2} marginBottom={2}>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ marginBottom: '0.5rem' }}>
               <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Creator:</span>
               <span style={{ marginLeft: '0.5rem', fontWeight: 'bold' }}>{proposal.creator}</span>
@@ -108,7 +108,7 @@ const DAOGovernance: React.FC = () => {
               <span style={{ marginLeft: '0.5rem' }}>{proposal.endTime}</span>
             </div>
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <div style={{ marginBottom: '1rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
                 <span style={{ fontSize: '0.875rem' }}>For: {proposal.votesFor}</span>
@@ -197,7 +197,7 @@ const DAOGovernance: React.FC = () => {
 
       {/* Tab Navigation */}
       <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginBottom: '2rem' }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
           <div>
             <Button
               variant={activeTab === 'proposals' ? "primary" : "secondary"}
@@ -303,8 +303,8 @@ const DAOGovernance: React.FC = () => {
             Manage protocol expansion parameters and treasury allocation.
           </span>
           
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
-            <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+            <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
               <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--omni-text)' }}>Treasury Allocation</h3>
                 <div style={{ marginBottom: '1rem' }}>
@@ -330,7 +330,7 @@ const DAOGovernance: React.FC = () => {
               </div>
             </div>
             
-            <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
+            <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
               <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--omni-text)' }}>Protocol Parameters</h3>
                 <div style={{ marginBottom: '1rem' }}>

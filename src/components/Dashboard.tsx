@@ -126,8 +126,8 @@ const Dashboard: React.FC = () => {
       {/* Quick Actions */}
       <div style={{ marginTop: '2rem' }}>
         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Quick Actions</h2>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
               title="Create Bond"
               description="Purchase OMNI tokens at a discount through our bonding mechanism"
@@ -136,7 +136,7 @@ const Dashboard: React.FC = () => {
               onClick={() => window.location.href = '/bonds'}
             />
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
               title="Stake OMNI"
               description="Stake your OMNI tokens to earn sOMNI and receive revenue distributions"
@@ -145,7 +145,7 @@ const Dashboard: React.FC = () => {
               onClick={() => window.location.href = '/staking'}
             />
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
               title="DAO Governance"
               description="Participate in governance proposals and vote on protocol changes"
@@ -154,7 +154,7 @@ const Dashboard: React.FC = () => {
               onClick={() => window.location.href = '/governance'}
             />
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
               title="LP Bonds"
               description="Acquire LP positions with supply neutralization"
@@ -163,7 +163,7 @@ const Dashboard: React.FC = () => {
               onClick={() => window.location.href = '/lp-bonds'}
             />
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
               title="Revenue Analytics"
               description="Track real-time revenue sharing and distribution metrics"
@@ -172,7 +172,7 @@ const Dashboard: React.FC = () => {
               onClick={() => window.location.href = '/analytics'}
             />
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6} lg={4}>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
               title="Contract Management"
               description="Universal setter functions for contract owners"
