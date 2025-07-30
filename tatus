@@ -1,0 +1,19 @@
+[33m38f0ea0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m Initial commit: Omni DAO frontend with Ink Kit integration
+[33m7e01060[m[33m ([m[1;31morigin/master[m[33m)[m Replace Grid, Card, Input components with standard HTML - only Button exported from Ink Kit
+[33md81b017[m Fix remaining Text components in RevenueAnalytics - final cleanup
+[33md9e74ef[m Replace Text components with HTML p/span elements - Text not exported from Ink Kit
+[33m68bb554[m Replace Heading components with HTML h1/h2/h3 elements - Heading not exported from Ink Kit
+[33me7ff746[m Fix remaining JSX syntax errors in RevenueAnalytics - clean up malformed div structures
+[33mb148bac[m Fix final JSX syntax error in RevenueAnalytics - remove malformed nested div structure
+[33m4d62d19[m Fix JSX syntax errors - missing closing tags and malformed div structures
+[33m8c9a702[m Fix remaining Box components - final cleanup for Vercel deployment
+[33m04796c0[m Replace all Box components with div elements to fix Ink Kit import errors
+[33m936ee1e[m Fix Box components in BondInterface - replace with div elements
+[33m625187a[m Fix Box component imports - replace with div elements
+[33m5bbfcc3[m Fix Ink Kit Container component imports - replace with Box
+[33ma7621e1[m Fix Wagmi v2 import paths for RainbowKit configuration
+[33m40c4167[m Fix TypeScript version conflict for Vercel deployment
+[33m49a91fc[m Add RainbowKit wallet integration with WalletConnect and multi-chain support
+[33md3331f5[m Enhanced wallet integration with auto-connect, disconnect, and better error handling
+[33mcc7d57f[m Add Vercel deployment configuration and optimize for production
+[33m67d212e[m Initial commit: Omni DAO frontend with Ink Kit integration
