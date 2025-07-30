@@ -11,26 +11,15 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
   const [unstakeAmount, setUnstakeAmount] = useState('');
   const [claimAmount, setClaimAmount] = useState('0');
 
-  const [userStats, setUserStats] = useState({
-    omniBalance: '0',
-    somniBalance: '0',
-    stakedAmount: '0',
-    earnedRewards: '0',
-    apy: '12.5%',
-  });
-
-  // Mock data - in real app, this would come from smart contracts
-  React.useEffect(() => {
-    if (isConnected) {
-      setUserStats({
-        omniBalance: '1,250.50',
-        somniBalance: '1,180.25',
-        stakedAmount: '1,180.25',
-        earnedRewards: '45.30',
-        apy: '12.5%',
-      });
-    }
-  }, [isConnected]);
+  const stakingStats = {
+    totalStaked: '2,847,500',
+    totalStakers: '1,234',
+    averageAPY: '18.5%',
+    totalRewards: '45,230',
+    userStaked: '1,250',
+    userRewards: '125.50',
+    userAPY: '19.2%'
+  };
 
   const handleStake = () => {
     if (!isConnected) {
@@ -38,10 +27,10 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
       return;
     }
     if (!stakeAmount || Number(stakeAmount) <= 0) {
-      alert('Please enter a valid amount!');
+      alert('Please enter a valid amount to stake!');
       return;
     }
-    alert(`Staking ${stakeAmount} OMNI...\nThis would call the smart contract in a real implementation.`);
+    alert(`Staking ${stakeAmount} OMNI tokens...\nThis would call the smart contract in a real implementation.`);
     setStakeAmount('');
   };
 
@@ -51,10 +40,10 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
       return;
     }
     if (!unstakeAmount || Number(unstakeAmount) <= 0) {
-      alert('Please enter a valid amount!');
+      alert('Please enter a valid amount to unstake!');
       return;
     }
-    alert(`Unstaking ${unstakeAmount} sOMNI...\nThis would call the smart contract in a real implementation.`);
+    alert(`Unstaking ${unstakeAmount} sOMNI tokens...\nThis would call the smart contract in a real implementation.`);
     setUnstakeAmount('');
   };
 
@@ -63,28 +52,12 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
       alert('Please connect your wallet first!');
       return;
     }
-    alert(`Claiming ${claimAmount} rewards...\nThis would call the smart contract in a real implementation.`);
+    if (Number(claimAmount) <= 0) {
+      alert('No rewards available to claim!');
+      return;
+    }
+    alert(`Claiming ${claimAmount} OMNI rewards...\nThis would call the smart contract in a real implementation.`);
   };
-
-  const StatCard: React.FC<{ title: string; value: string; subtitle?: string }> = ({ 
-    title, 
-    value, 
-    subtitle 
-  }) => (
-    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
-      <span className="omni-stat-value">{value}</span>
-      <span className="omni-stat-label">{title}</span>
-      {subtitle && (
-        <span style={{ 
-          color: 'var(--omni-text-secondary)', 
-          fontSize: '0.75rem',
-          marginTop: '0.5rem'
-        }}>
-          {subtitle}
-        </span>
-      )}
-    </div>
-  );
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
@@ -93,50 +66,21 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
           Staking Interface
         </h1>
         <span style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
-          Stake your OMNI tokens to earn sOMNI and receive revenue distributions
+          Stake OMNI tokens to earn sOMNI and receive revenue distributions
         </span>
       </div>
 
-      {/* User Stats */}
-      <div className="omni-stats-grid">
-        <StatCard 
-          title="OMNI Balance" 
-          value={userStats.omniBalance}
-          subtitle="Available to stake"
-        />
-        <StatCard 
-          title="sOMNI Balance" 
-          value={userStats.somniBalance}
-          subtitle="Staked tokens"
-        />
-        <StatCard 
-          title="Staked Amount" 
-          value={userStats.stakedAmount}
-          subtitle="Total staked"
-        />
-        <StatCard 
-          title="Earned Rewards" 
-          value={userStats.earnedRewards}
-          subtitle="Available to claim"
-        />
-        <StatCard 
-          title="Current APY" 
-          value={userStats.apy}
-          subtitle="Annual yield"
-        />
-      </div>
-
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={4} marginTop={2}>
-        {/* Stake OMNI */}
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={4}>
+        {/* Staking Actions */}
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Stake OMNI</h2>
             
-            <div>
+            <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Stake</p>
-              <Input
+              <input
                 type="number"
-                placeholder="Enter amount"
+                placeholder="Enter OMNI amount"
                 value={stakeAmount}
                 onChange={(e) => setStakeAmount(e.target.value)}
                 style={{
@@ -150,43 +94,30 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
               />
             </div>
 
-            <div>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                • 1:1 conversion rate (1 OMNI = 1 sOMNI)<br/>
-                • Start earning rewards immediately<br/>
-                • No lock-up period<br/>
-                • Revenue sharing enabled
-              </span>
-            </div>
-
             <Button
               variant="primary"
               size="lg"
               onClick={handleStake}
-              disabled={!isConnected || !stakeAmount}
+              disabled={!isConnected || !stakeAmount || Number(stakeAmount) <= 0}
               style={{
                 width: '100%',
                 background: 'linear-gradient(135deg, var(--omni-primary), var(--omni-secondary))',
                 border: 'none',
                 color: 'white',
                 padding: '1rem',
+                marginBottom: '2rem',
               }}
             >
               {isConnected ? 'Stake OMNI' : 'Connect Wallet to Stake'}
             </Button>
-          </div>
-        </div>
 
-        {/* Unstake sOMNI */}
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
-          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Unstake sOMNI</h2>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Unstake sOMNI</h3>
             
-            <div>
+            <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Unstake</p>
-              <Input
+              <input
                 type="number"
-                placeholder="Enter amount"
+                placeholder="Enter sOMNI amount"
                 value={unstakeAmount}
                 onChange={(e) => setUnstakeAmount(e.target.value)}
                 style={{
@@ -200,25 +131,16 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
               />
             </div>
 
-            <div>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                • 1:1 conversion rate (1 sOMNI = 1 OMNI)<br/>
-                • No unstaking penalty<br/>
-                • Immediate withdrawal<br/>
-                • Keep earned rewards
-              </span>
-            </div>
-
             <Button
               variant="secondary"
               size="lg"
               onClick={handleUnstake}
-              disabled={!isConnected || !unstakeAmount}
+              disabled={!isConnected || !unstakeAmount || Number(unstakeAmount) <= 0}
               style={{
                 width: '100%',
-                background: 'rgba(99, 102, 241, 0.1)',
-                border: '1px solid var(--omni-primary)',
-                color: 'var(--omni-primary)',
+                background: 'rgba(239, 68, 68, 0.1)',
+                border: '1px solid var(--omni-error)',
+                color: 'var(--omni-error)',
                 padding: '1rem',
               }}
             >
@@ -227,89 +149,71 @@ const StakingInterface: React.FC<StakingInterfaceProps> = ({ isConnected, accoun
           </div>
         </div>
 
-        {/* Claim Rewards */}
-        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12}>
+        {/* Staking Statistics */}
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Claim Rewards</h2>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Your Staking</h3>
             
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3} alignItems="center">
-              <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={8}>
-                <div>
-                  <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Available Rewards</p>
-                  <span style={{ 
-                    fontSize: '2rem', 
-                    fontWeight: 'bold', 
-                    color: 'var(--omni-success)',
-                    marginBottom: '1rem'
-                  }}>
-                    {claimAmount} OMNI
-                  </span>
-                  <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                    Revenue distributions from protocol fees and bond sales
-                  </span>
-                </div>
-              </div>
-              <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={handleClaimRewards}
-                  disabled={!isConnected || Number(claimAmount) <= 0}
-                  style={{
-                    width: '100%',
-                    background: 'var(--omni-success)',
-                    border: 'none',
-                    color: 'white',
-                    padding: '1rem',
-                  }}
-                >
-                  {isConnected ? 'Claim Rewards' : 'Connect Wallet to Claim'}
-                </Button>
-              </div>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Staked OMNI</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{stakingStats.userStaked}</div>
             </div>
+            
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Your APY</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{stakingStats.userAPY}</div>
+            </div>
+            
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Available Rewards</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{stakingStats.userRewards} OMNI</div>
+            </div>
+
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={handleClaimRewards}
+              disabled={!isConnected || Number(claimAmount) <= 0}
+              style={{
+                width: '100%',
+                background: 'var(--omni-success)',
+                border: 'none',
+                color: 'white',
+                marginTop: '1rem',
+              }}
+            >
+              Claim Rewards
+            </Button>
           </div>
         </div>
       </div>
 
-      {/* Staking Information */}
-      <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginTop: '2rem' }}>
-                    <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Staking Information</h2>
-        
+      {/* Global Staking Statistics */}
+      <div style={{ marginTop: '2rem' }}>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Global Staking Statistics</h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
-            <div>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>How Staking Works</p>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                When you stake OMNI tokens, you receive sOMNI (staked OMNI) tokens in return. 
-                These sOMNI tokens represent your share of the protocol's revenue and allow you 
-                to participate in governance decisions.
-              </span>
-            </div>
-
-            <div>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Revenue Distribution</p>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                Protocol revenue from bond sales, trading fees, and other sources is distributed 
-                proportionally to all sOMNI holders. You can claim your rewards at any time.
-              </span>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+            <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Staked</span>
+              <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{stakingStats.totalStaked}</div>
             </div>
           </div>
-
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
-            <div>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Governance Rights</p>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                sOMNI tokens grant you voting rights in DAO governance proposals. The more sOMNI 
-                you hold, the more influence you have in protocol decisions.
-              </span>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+            <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Stakers</span>
+              <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{stakingStats.totalStakers}</div>
             </div>
-
-            <div>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Risk Considerations</p>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                Staking involves smart contract risk. While the protocol is designed to be secure, 
-                always do your own research and only stake what you can afford to lose.
-              </span>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+            <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Average APY</span>
+              <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{stakingStats.averageAPY}</div>
+            </div>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={3}>
+            <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Rewards</span>
+              <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{stakingStats.totalRewards}</div>
             </div>
           </div>
         </div>

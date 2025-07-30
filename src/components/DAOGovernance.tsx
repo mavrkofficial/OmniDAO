@@ -99,81 +99,110 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2} marginBottom={2}>
           <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-            <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Creator</span>
-            <span style={{ fontSize: '0.875rem' }}>{proposal.creator}</span>
+            <div style={{ marginBottom: '0.5rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Creator:</span>
+              <span style={{ marginLeft: '0.5rem', fontWeight: 'bold' }}>{proposal.creator}</span>
+            </div>
+            <div style={{ marginBottom: '0.5rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Type:</span>
+              <span style={{ marginLeft: '0.5rem' }}>{proposal.type}</span>
+            </div>
+            <div>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Ends:</span>
+              <span style={{ marginLeft: '0.5rem' }}>{proposal.endTime}</span>
+            </div>
           </div>
           <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-            <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Type</span>
-            <span style={{ fontSize: '0.875rem' }}>{proposal.type}</span>
-          </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-            <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>End Date</span>
-            <span style={{ fontSize: '0.875rem' }}>{proposal.endTime}</span>
-          </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-            <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Votes</span>
-            <span style={{ fontSize: '0.875rem' }}>{totalVotes.toLocaleString()}</span>
+            <div style={{ marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+                <span style={{ fontSize: '0.875rem' }}>For: {proposal.votesFor}</span>
+                <span style={{ fontSize: '0.875rem', color: 'var(--omni-success)' }}>{forPercentage}%</span>
+              </div>
+              <div style={{ 
+                width: '100%', 
+                height: '8px', 
+                background: 'rgba(99, 102, 241, 0.2)', 
+                borderRadius: '4px',
+                overflow: 'hidden'
+              }}>
+                <div style={{ 
+                  width: `${forPercentage}%`, 
+                  height: '100%', 
+                  background: 'var(--omni-success)',
+                  borderRadius: '4px'
+                }} />
+              </div>
+            </div>
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+                <span style={{ fontSize: '0.875rem' }}>Against: {proposal.votesAgainst}</span>
+                <span style={{ fontSize: '0.875rem', color: 'var(--omni-error)' }}>{againstPercentage}%</span>
+              </div>
+              <div style={{ 
+                width: '100%', 
+                height: '8px', 
+                background: 'rgba(99, 102, 241, 0.2)', 
+                borderRadius: '4px',
+                overflow: 'hidden'
+              }}>
+                <div style={{ 
+                  width: `${againstPercentage}%`, 
+                  height: '100%', 
+                  background: 'var(--omni-error)',
+                  borderRadius: '4px'
+                }} />
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Vote Progress */}
-        <div>
-          <div>
-            <span style={{ fontSize: '0.875rem' }}>For: {proposal.votesFor.toLocaleString()} ({forPercentage}%)</span>
-            <span style={{ fontSize: '0.875rem' }}>Against: {proposal.votesAgainst.toLocaleString()} ({againstPercentage}%)</span>
-          </div>
+        <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+          <Button
+            variant="primary"
+            size="sm"
+            onClick={() => handleVote(proposal.id, 'for')}
+            disabled={!isConnected || proposal.status !== 'Active'}
+            style={{
+              background: 'var(--omni-success)',
+              border: 'none',
+              color: 'white',
+            }}
+          >
+            Vote For
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => handleVote(proposal.id, 'against')}
+            disabled={!isConnected || proposal.status !== 'Active'}
+            style={{
+              background: 'var(--omni-error)',
+              border: 'none',
+              color: 'white',
+            }}
+          >
+            Vote Against
+          </Button>
         </div>
-
-        {/* Vote Buttons */}
-        {proposal.status === 'Active' && (
-          <div>
-            <Button
-              variant="primary"
-              size="sm"
-              onClick={() => handleVote(proposal.id, 'for')}
-              disabled={!isConnected}
-              style={{
-                background: 'var(--omni-success)',
-                border: 'none',
-                color: 'white',
-              }}
-            >
-              Vote For
-            </Button>
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={() => handleVote(proposal.id, 'against')}
-              disabled={!isConnected}
-              style={{
-                background: 'var(--omni-error)',
-                border: 'none',
-                color: 'white',
-              }}
-            >
-              Vote Against
-            </Button>
-          </div>
-        )}
       </div>
     );
   };
 
   return (
-          <div>
-      <div>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           DAO Governance
         </h1>
         <span style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
-          Participate in governance proposals and vote on protocol changes
+          Participate in protocol governance and decision-making
         </span>
       </div>
 
       {/* Tab Navigation */}
-      <div>
+      <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginBottom: '2rem' }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
-          <Grid item>
+          <div>
             <Button
               variant={activeTab === 'proposals' ? "primary" : "secondary"}
               onClick={() => setActiveTab('proposals')}
@@ -181,7 +210,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
               Active Proposals
             </Button>
           </div>
-          <Grid item>
+          <div>
             <Button
               variant={activeTab === 'create' ? "primary" : "secondary"}
               onClick={() => setActiveTab('create')}
@@ -189,7 +218,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
               Create Proposal
             </Button>
           </div>
-          <Grid item>
+          <div>
             <Button
               variant={activeTab === 'expansion' ? "primary" : "secondary"}
               onClick={() => setActiveTab('expansion')}
@@ -217,7 +246,7 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
           
           <div>
             <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Proposal Title</p>
-            <Input
+            <input
               placeholder="Enter proposal title"
               value={proposalTitle}
               onChange={(e) => setProposalTitle(e.target.value)}
@@ -280,27 +309,57 @@ const DAOGovernance: React.FC<DAOGovernanceProps> = ({ isConnected, account }) =
           
           <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={3}>
             <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
-              <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
-                <span className="omni-stat-value">$2.5M</span>
-                <span className="omni-stat-label">Treasury Balance</span>
+              <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--omni-text)' }}>Treasury Allocation</h3>
+                <div style={{ marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Current Allocation:</span>
+                  <div style={{ marginTop: '0.5rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+                      <span>Staking Rewards</span>
+                      <span>70%</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
+                      <span>Treasury</span>
+                      <span>20%</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <span>Development</span>
+                      <span>10%</span>
+                    </div>
+                  </div>
+                </div>
+                <Button variant="primary" size="sm" disabled={!isConnected}>
+                  Update Allocation
+                </Button>
               </div>
             </div>
+            
             <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={6}>
-              <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
-                <span className="omni-stat-value">15</span>
-                <span className="omni-stat-label">Active Expansions</span>
+              <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--omni-text)' }}>Protocol Parameters</h3>
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Bond Discount Range:</span>
+                    <span style={{ marginLeft: '0.5rem' }}>2% - 15%</span>
+                  </div>
+                  <div style={{ marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Vesting Period:</span>
+                    <span style={{ marginLeft: '0.5rem' }}>7 days</span>
+                  </div>
+                  <div>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Minimum Bond:</span>
+                    <span style={{ marginLeft: '0.5rem' }}>0.1 ETH</span>
+                  </div>
+                </div>
+                <Button variant="primary" size="sm" disabled={!isConnected}>
+                  Update Parameters
+                </Button>
               </div>
             </div>
-          </div>
-
-          <div>
-            <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-              Expansion management features will be available to DAO members with sufficient voting power.
-            </span>
           </div>
         </div>
       )}
-          </div>
+    </div>
   );
 };
 

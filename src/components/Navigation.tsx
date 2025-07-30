@@ -29,9 +29,9 @@ const Navigation: React.FC = () => {
       zIndex: 1000,
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} alignItems="center" justifyContent="space-between" style={{ padding: '1rem 0' }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: '1rem 0', flexWrap: "wrap", gap: "1rem" }}>
           {/* Logo and Brand */}
-          <Grid item>
+          <div>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <span className="omni-gradient-text" style={{ 
                 fontSize: '1.5rem', 
@@ -44,7 +44,7 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Navigation Links */}
-          <Grid item>
+          <div>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               {navItems.map((item) => (
                 <Link 
@@ -76,7 +76,7 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Wallet Connection */}
-          <Grid item>
+          <div>
             <WalletConnect />
           </div>
         </div>

@@ -1,7 +1,6 @@
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
 import { createConfig, http } from 'wagmi';
 import { mainnet, polygon, bsc } from 'wagmi/chains';
-import { walletConnectProvider, EIP6963Connector } from '@rainbow-me/rainbowkit';
 
 const chains = [mainnet, polygon, bsc];
 
@@ -12,10 +11,7 @@ const { connectors } = getDefaultWallets({
 });
 
 export const wagmiConfig = createConfig({
-  connectors: [
-    ...connectors,
-    new EIP6963Connector({ chains }),
-  ],
+  connectors,
   transports: {
     [mainnet.id]: http(),
     [polygon.id]: http(),

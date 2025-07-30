@@ -90,7 +90,7 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
             {/* Amount Input */}
             <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Bond</p>
-              <Input
+              <input
                 type="number"
                 placeholder="Enter amount"
                 value={amount}
@@ -111,26 +111,25 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
             <div style={{ marginBottom: '1.5rem' }}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
                 <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
-                    <span className="omni-stat-value">{discount}</span>
-                    <span className="omni-stat-label">Discount Rate</span>
+                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+                    <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Current Discount</span>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{discount}</div>
                   </div>
                 </div>
                 <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
-                    <span className="omni-stat-value">{bondAmount} OMNI</span>
-                    <span className="omni-stat-label">You'll Receive</span>
+                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+                    <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>OMNI to Receive</span>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{bondAmount}</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Create Bond Button */}
             <Button
               variant="primary"
               size="lg"
               onClick={handleCreateBond}
-              disabled={!isConnected || !amount}
+              disabled={!isConnected || !amount || Number(amount) <= 0}
               style={{
                 width: '100%',
                 background: 'linear-gradient(135deg, var(--omni-primary), var(--omni-secondary))',
@@ -139,50 +138,34 @@ const BondInterface: React.FC<BondInterfaceProps> = ({ isConnected, account }) =
                 padding: '1rem',
               }}
             >
-              {isConnected ? 'Create Bond' : 'Connect Wallet to Bond'}
+              {isConnected ? `Bond ${selectedToken}` : 'Connect Wallet to Bond'}
             </Button>
           </div>
         </div>
 
-        {/* Bond Information */}
+        {/* Bond Statistics */}
         <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Bond Information</h3>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Bond Statistics</h3>
             
-            <div style={{ marginBottom: '1.5rem' }}>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Vesting Period</p>
-              <span style={{ color: 'var(--omni-text-secondary)' }}>7 days linear vesting</span>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Bonds Created</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>156</div>
             </div>
-
-            <div style={{ marginBottom: '1.5rem' }}>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Minimum Bond</p>
-              <span style={{ color: 'var(--omni-text-secondary)' }}>0.01 {selectedToken}</span>
+            
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total Value Bonded</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>$2.4M</div>
             </div>
-
-            <div style={{ marginBottom: '1.5rem' }}>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Maximum Bond</p>
-              <span style={{ color: 'var(--omni-text-secondary)' }}>No limit</span>
+            
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Average Discount</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>5.8%</div>
             </div>
-
-            <div style={{ marginBottom: '1.5rem' }}>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Bond Terms</p>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                • Bonds are non-transferable during vesting<br/>
-                • Discount rates vary by token<br/>
-                • Revenue sharing starts immediately<br/>
-                • No early withdrawal penalty
-              </span>
-            </div>
-          </div>
-
-          {/* Recent Bonds */}
-          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginTop: '1rem' }}>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Recent Bonds</h3>
+            
             <div>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                No recent bonds to display.<br/>
-                Connect your wallet to see your bond history.
-              </span>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Vesting Period</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>7 days</div>
             </div>
           </div>
         </div>

@@ -7,50 +7,52 @@ interface LPBondInterfaceProps {
 }
 
 const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account }) => {
-  const [selectedPool, setSelectedPool] = useState('OMNI-ETH');
-  const [amount, setAmount] = useState('');
-  const [lpTokens, setLpTokens] = useState('0');
-  const [neutralization, setNeutralization] = useState('Supply Neutralized');
+  const [selectedPool, setSelectedPool] = useState('ETH-USDT');
+  const [lpAmount, setLpAmount] = useState('');
+  const [bondAmount, setBondAmount] = useState('0');
+  const [discount, setDiscount] = useState('8.5%');
 
   const lpPools = [
     { 
-      symbol: 'OMNI-ETH', 
-      name: 'OMNI/ETH Pool', 
-      icon: '🌊',
-      tvl: '$450,000',
-      apy: '12.5%',
-      neutralization: 'Active'
+      symbol: 'ETH-USDT', 
+      name: 'Ethereum / Tether', 
+      icon: '🔷💵',
+      tvl: '$1.2M',
+      apr: '12.5%',
+      discount: '8.5%'
     },
     { 
-      symbol: 'OMNI-USDT', 
-      name: 'OMNI/USDT Pool', 
-      icon: '🌊',
-      tvl: '$320,000',
-      apy: '15.2%',
-      neutralization: 'Active'
+      symbol: 'ETH-WETH', 
+      name: 'Ethereum / Wrapped ETH', 
+      icon: '🔷🔷',
+      tvl: '$850K',
+      apr: '15.2%',
+      discount: '7.8%'
     },
     { 
-      symbol: 'OMNI-WETH', 
-      name: 'OMNI/WETH Pool', 
-      icon: '🌊',
-      tvl: '$280,000',
-      apy: '11.8%',
-      neutralization: 'Active'
+      symbol: 'USDT-SOLVBTC', 
+      name: 'Tether / SolvBTC', 
+      icon: '💵₿',
+      tvl: '$650K',
+      apr: '18.7%',
+      discount: '9.2%'
     },
   ];
 
   const handlePoolSelect = (pool: string) => {
     setSelectedPool(pool);
-    // Mock calculation
-    const mockLpTokens = { 'OMNI-ETH': '1250', 'OMNI-USDT': '890', 'OMNI-WETH': '720' };
-    setLpTokens(mockLpTokens[pool as keyof typeof mockLpTokens]);
+    const selectedPoolData = lpPools.find(p => p.symbol === pool);
+    if (selectedPoolData) {
+      setDiscount(selectedPoolData.discount);
+    }
   };
 
   const calculateLPBond = () => {
-    if (!amount || isNaN(Number(amount))) return;
-    const inputAmount = Number(amount);
-    const lpValue = inputAmount * 2.5; // Mock calculation
-    setLpTokens(lpValue.toFixed(0));
+    if (!lpAmount || isNaN(Number(lpAmount))) return;
+    const inputAmount = Number(lpAmount);
+    const discountRate = parseFloat(discount.replace('%', '')) / 100;
+    const bondValue = inputAmount * (1 + discountRate);
+    setBondAmount(bondValue.toFixed(2));
   };
 
   const handleCreateLPBond = () => {
@@ -58,21 +60,21 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
       alert('Please connect your wallet first!');
       return;
     }
-    if (!amount || Number(amount) <= 0) {
-      alert('Please enter a valid amount!');
+    if (!lpAmount || Number(lpAmount) <= 0) {
+      alert('Please enter a valid LP amount!');
       return;
     }
-    alert(`Creating LP bond for ${amount} in ${selectedPool}...\nThis would call the smart contract in a real implementation.`);
+    alert(`Creating LP bond for ${lpAmount} ${selectedPool} LP tokens...\nThis would call the smart contract in a real implementation.`);
   };
 
   return (
-    <div>
-      <div>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
           LP Bond Interface
         </h1>
         <span style={{ color: 'var(--omni-text-secondary)', fontSize: '1.125rem' }}>
-          Acquire LP positions with supply neutralization for optimal liquidity management
+          Acquire LP positions with supply neutralization through our advanced bonding mechanism
         </span>
       </div>
 
@@ -83,35 +85,25 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Create LP Bond</h2>
             
             {/* Pool Selection */}
-            <div>
+            <div style={{ marginBottom: '1.5rem' }}>
               <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Select LP Pool</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
                 {lpPools.map((pool) => (
-                  <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} sm={6} md={4} key={pool.symbol}>
+                  <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6} sm={4} key={pool.symbol}>
                     <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" 
                       style={{ 
                         cursor: 'pointer',
                         border: selectedPool === pool.symbol ? '2px solid var(--omni-primary)' : '1px solid rgba(99, 102, 241, 0.2)',
+                        textAlign: 'center',
                         padding: '1rem'
                       }}
                       onClick={() => handlePoolSelect(pool.symbol)}
                     >
-                      <div>
-                        <span style={{ fontSize: '1.5rem' }}>{pool.icon}</span>
-                        <div>
-                          <p style={{ fontWeight: 'bold' }}>{pool.symbol}</p>
-                          <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>{pool.name}</span>
-                        </div>
-                      </div>
-                      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={1}>
-                        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-                          <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>TVL</span>
-                          <span style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>{pool.tvl}</span>
-                        </div>
-                        <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-                          <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>APY</span>
-                          <span style={{ fontSize: '0.875rem', fontWeight: 'bold', color: 'var(--omni-success)' }}>{pool.apy}</span>
-                        </div>
+                      <span style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{pool.icon}</span>
+                      <p style={{ fontWeight: 'bold' }}>{pool.symbol}</p>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--omni-text-secondary)' }}>{pool.name}</span>
+                      <div style={{ marginTop: '0.5rem', fontSize: '0.75rem' }}>
+                        <span style={{ color: 'var(--omni-success)' }}>APR: {pool.apr}</span>
                       </div>
                     </div>
                   </div>
@@ -119,14 +111,14 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
               </div>
             </div>
 
-            {/* Amount Input */}
-            <div>
-              <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Amount to Provide</p>
-              <Input
+            {/* LP Amount Input */}
+            <div style={{ marginBottom: '1.5rem' }}>
+              <p style={{ marginBottom: '1rem', fontWeight: 'bold' }}>LP Tokens to Bond</p>
+              <input
                 type="number"
-                placeholder="Enter amount"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                placeholder="Enter LP token amount"
+                value={lpAmount}
+                onChange={(e) => setLpAmount(e.target.value)}
                 onBlur={calculateLPBond}
                 style={{
                   width: '100%',
@@ -139,32 +131,29 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
               />
             </div>
 
-            {/* LP Bond Details */}
-            <div>
+            {/* Bond Details */}
+            <div style={{ marginBottom: '1.5rem' }}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }} spacing={2}>
                 <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
-                    <span className="omni-stat-value">{lpTokens}</span>
-                    <span className="omni-stat-label">LP Tokens</span>
+                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+                    <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>LP Discount</span>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{discount}</div>
                   </div>
                 </div>
                 <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={6}>
-                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
-                    <span className="omni-stat-value" style={{ color: 'var(--omni-success)' }}>
-                      {neutralization}
-                    </span>
-                    <span className="omni-stat-label">Supply Status</span>
+                  <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
+                    <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>OMNI to Receive</span>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>{bondAmount}</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Create LP Bond Button */}
             <Button
               variant="primary"
               size="lg"
               onClick={handleCreateLPBond}
-              disabled={!isConnected || !amount}
+              disabled={!isConnected || !lpAmount || Number(lpAmount) <= 0}
               style={{
                 width: '100%',
                 background: 'linear-gradient(135deg, var(--omni-primary), var(--omni-secondary))',
@@ -173,52 +162,34 @@ const LPBondInterface: React.FC<LPBondInterfaceProps> = ({ isConnected, account 
                 padding: '1rem',
               }}
             >
-              {isConnected ? 'Create LP Bond' : 'Connect Wallet to Bond'}
+              {isConnected ? `Bond ${selectedPool} LP` : 'Connect Wallet to Bond'}
             </Button>
           </div>
         </div>
 
-        {/* LP Bond Information */}
+        {/* LP Bond Statistics */}
         <div style={{ flex: "1 1 300px", minWidth: "300px" }} xs={12} md={4}>
           <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card">
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>LP Bond Information</h3>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>LP Bond Statistics</h3>
+            
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total LP Bonds</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>89</div>
+            </div>
+            
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Total LP Value</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>$1.8M</div>
+            </div>
+            
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Average LP Discount</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>8.2%</div>
+            </div>
             
             <div>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Supply Neutralization</p>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                LP bonds automatically neutralize supply impact by minting and burning tokens strategically.
-              </span>
-            </div>
-
-            <div>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Vesting Period</p>
-              <span style={{ color: 'var(--omni-text-secondary)' }}>14 days linear vesting</span>
-            </div>
-
-            <div>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Minimum Bond</p>
-              <span style={{ color: 'var(--omni-text-secondary)' }}>0.1 ETH equivalent</span>
-            </div>
-
-            <div>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>LP Bond Benefits</p>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                • Earn trading fees from LP positions<br/>
-                • Supply neutralization reduces price impact<br/>
-                • Higher APY than regular bonds<br/>
-                • Liquidity provision rewards
-              </span>
-            </div>
-          </div>
-
-          {/* LP Bond History */}
-          <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" style={{ marginTop: '1rem' }}>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Your LP Bonds</h3>
-            <div>
-              <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-                No active LP bonds found.<br/>
-                Connect your wallet to see your LP bond history.
-              </span>
+              <span style={{ fontSize: '0.875rem', color: 'var(--omni-text-secondary)' }}>Supply Neutralization</span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-primary)' }}>Active</div>
             </div>
           </div>
         </div>
