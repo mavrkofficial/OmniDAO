@@ -279,7 +279,7 @@ const DAOGovernance: React.FC = () => {
 
           <Button
             variant="primary"
-            size="lg"
+            size="large"
             onClick={handleCreateProposal}
             disabled={!isConnected || !proposalTitle || !proposalDescription}
             style={{

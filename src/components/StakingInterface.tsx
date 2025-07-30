@@ -92,7 +92,7 @@ const StakingInterface: React.FC = () => {
 
             <Button
               variant="primary"
-              size="lg"
+              size="large"
               onClick={handleStake}
               disabled={!isConnected || !stakeAmount || Number(stakeAmount) <= 0}
               style={{
@@ -129,7 +129,7 @@ const StakingInterface: React.FC = () => {
 
             <Button
               variant="secondary"
-              size="lg"
+              size="large"
               onClick={handleUnstake}
               disabled={!isConnected || !unstakeAmount || Number(unstakeAmount) <= 0}
               style={{

@@ -147,7 +147,7 @@ const LPBondInterface: React.FC = () => {
 
             <Button
               variant="primary"
-              size="lg"
+              size="large"
               onClick={handleCreateLPBond}
               disabled={!isConnected || !lpAmount || Number(lpAmount) <= 0}
               style={{

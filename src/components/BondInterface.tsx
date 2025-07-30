@@ -125,7 +125,7 @@ const BondInterface: React.FC = () => {
 
             <Button
               variant="primary"
-              size="lg"
+              size="large"
               onClick={handleCreateBond}
               disabled={!isConnected || !amount || Number(amount) <= 0}
               style={{
