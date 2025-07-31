@@ -75,14 +75,23 @@ const Dashboard: React.FC = () => {
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       {/* Hero Section */}
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <h1 className="omni-gradient-text" style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-          Welcome to Omni DAO
-        </h1>
+        <div style={{ marginBottom: '1rem' }}>
+          <img 
+            src="/images/omni-dao-logo.png" 
+            alt="Omni DAO" 
+            style={{ 
+              maxWidth: '400px', 
+              width: '100%',
+              filter: 'brightness(1.1) contrast(1.1)'
+            }} 
+          />
+        </div>
         <span style={{ 
           color: 'var(--omni-text-secondary)', 
           fontSize: '1.125rem',
           maxWidth: '600px',
-          margin: '0 auto'
+          margin: '0 auto',
+          fontFamily: 'Orbitron, Arial, sans-serif'
         }}>
           Fully modular, DAO-governed liquidity infrastructure protocol for Ink L2. 
           Experience the revolutionary deflationary mechanism disguised as inflation.
@@ -125,7 +134,7 @@ const Dashboard: React.FC = () => {
 
       {/* Quick Actions */}
       <div style={{ marginTop: '2rem' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)' }}>Quick Actions</h2>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)', fontFamily: 'Orbitron, Arial, sans-serif' }}>Quick Actions</h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
           <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
@@ -189,14 +198,29 @@ const Dashboard: React.FC = () => {
         marginTop: '2rem',
         textAlign: 'center',
         background: 'rgba(239, 68, 68, 0.1)',
-        border: '1px solid var(--omni-error)'
+        border: '1px solid var(--omni-error)',
+        borderRadius: '8px',
+        padding: '1rem'
       }}>
-        <span style={{ color: 'var(--omni-error)', marginBottom: '1rem' }}>
+        <span style={{ color: 'var(--omni-error)', marginBottom: '1rem', display: 'block' }}>
           ⚠️ Connect your wallet to interact with Omni DAO
         </span>
         <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
           You need to connect your wallet to access all features and view your personal data.
         </span>
+      </div>
+
+      {/* Bottom Image */}
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '2rem' }}>
+        <img 
+          src="/images/believe-in-something.png" 
+          alt="Believe In Something" 
+          style={{ 
+            maxWidth: '600px', 
+            width: '100%',
+            filter: 'brightness(1.05) contrast(1.05)'
+          }} 
+        />
       </div>
     </div>
   );

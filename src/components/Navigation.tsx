@@ -33,13 +33,15 @@ const Navigation: React.FC = () => {
           {/* Logo and Brand */}
           <div>
             <Link to="/" style={{ textDecoration: 'none' }}>
-              <span className="omni-gradient-text" style={{ 
-                fontSize: '1.5rem', 
-                fontWeight: 'bold',
-                cursor: 'pointer'
-              }}>
-                🚀 Omni DAO
-              </span>
+              <img 
+                src="/images/omni-logo-name.png" 
+                alt="Omni DAO" 
+                style={{ 
+                  height: '40px', 
+                  cursor: 'pointer',
+                  filter: 'brightness(1.1) contrast(1.1)'
+                }} 
+              />
             </Link>
           </div>
 
