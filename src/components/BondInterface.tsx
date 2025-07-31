@@ -128,13 +128,6 @@ const BondInterface: React.FC = () => {
               size="large"
               onClick={handleCreateBond}
               disabled={!isConnected || !amount || Number(amount) <= 0}
-              style={{
-                width: '100%',
-                background: 'linear-gradient(135deg, var(--omni-primary), var(--omni-secondary))',
-                border: 'none',
-                color: 'white',
-                padding: '1rem',
-              }}
             >
               {isConnected ? `Bond ${selectedToken}` : 'Connect Wallet to Bond'}
             </Button>

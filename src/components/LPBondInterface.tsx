@@ -150,13 +150,6 @@ const LPBondInterface: React.FC = () => {
               size="large"
               onClick={handleCreateLPBond}
               disabled={!isConnected || !lpAmount || Number(lpAmount) <= 0}
-              style={{
-                width: '100%',
-                background: 'linear-gradient(135deg, var(--omni-primary), var(--omni-secondary))',
-                border: 'none',
-                color: 'white',
-                padding: '1rem',
-              }}
             >
               {isConnected ? `Bond ${selectedPool} LP` : 'Connect Wallet to Bond'}
             </Button>

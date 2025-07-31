@@ -153,30 +153,20 @@ const DAOGovernance: React.FC = () => {
         </div>
 
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
-          <Button
-            variant="primary"
-            size="sm"
-            onClick={() => handleVote(proposal.id, 'for')}
-            disabled={!isConnected || proposal.status !== 'Active'}
-            style={{
-              background: 'var(--omni-success)',
-              border: 'none',
-              color: 'white',
-            }}
-          >
+                     <Button
+             variant="primary"
+             size="sm"
+             onClick={() => handleVote(proposal.id, 'for')}
+             disabled={!isConnected || proposal.status !== 'Active'}
+           >
             Vote For
           </Button>
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={() => handleVote(proposal.id, 'against')}
-            disabled={!isConnected || proposal.status !== 'Active'}
-            style={{
-              background: 'var(--omni-error)',
-              border: 'none',
-              color: 'white',
-            }}
-          >
+                     <Button
+             variant="secondary"
+             size="sm"
+             onClick={() => handleVote(proposal.id, 'against')}
+             disabled={!isConnected || proposal.status !== 'Active'}
+           >
             Vote Against
           </Button>
         </div>
@@ -282,13 +272,6 @@ const DAOGovernance: React.FC = () => {
             size="large"
             onClick={handleCreateProposal}
             disabled={!isConnected || !proposalTitle || !proposalDescription}
-            style={{
-              width: '100%',
-              background: 'linear-gradient(135deg, var(--omni-primary), var(--omni-secondary))',
-              border: 'none',
-              color: 'white',
-              padding: '1rem',
-            }}
           >
             {isConnected ? 'Create Proposal' : 'Connect Wallet to Create'}
           </Button>

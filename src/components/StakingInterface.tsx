@@ -95,14 +95,6 @@ const StakingInterface: React.FC = () => {
               size="large"
               onClick={handleStake}
               disabled={!isConnected || !stakeAmount || Number(stakeAmount) <= 0}
-              style={{
-                width: '100%',
-                background: 'linear-gradient(135deg, var(--omni-primary), var(--omni-secondary))',
-                border: 'none',
-                color: 'white',
-                padding: '1rem',
-                marginBottom: '2rem',
-              }}
             >
               {isConnected ? 'Stake OMNI' : 'Connect Wallet to Stake'}
             </Button>
@@ -132,13 +124,6 @@ const StakingInterface: React.FC = () => {
               size="large"
               onClick={handleUnstake}
               disabled={!isConnected || !unstakeAmount || Number(unstakeAmount) <= 0}
-              style={{
-                width: '100%',
-                background: 'rgba(239, 68, 68, 0.1)',
-                border: '1px solid var(--omni-error)',
-                color: 'var(--omni-error)',
-                padding: '1rem',
-              }}
             >
               {isConnected ? 'Unstake sOMNI' : 'Connect Wallet to Unstake'}
             </Button>
@@ -170,13 +155,6 @@ const StakingInterface: React.FC = () => {
               size="sm"
               onClick={handleClaimRewards}
               disabled={!isConnected || Number(claimAmount) <= 0}
-              style={{
-                width: '100%',
-                background: 'var(--omni-success)',
-                border: 'none',
-                color: 'white',
-                marginTop: '1rem',
-              }}
             >
               Claim Rewards
             </Button>
