@@ -8,7 +8,7 @@ const WalletConnect: React.FC = () => {
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <ConnectButton showBalance={false} />
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,212,255,0.10)', borderRadius: 18, padding: '4px 12px' }}>
-        <img src={process.env.PUBLIC_URL + '/images/ink-l2-logo.png'} alt="Ink Layer 2" style={{ width: 24, height: 24, borderRadius: '50%' }} />
+        <img src="/images/ink-l2-logo.png" alt="Ink Layer 2" style={{ width: 24, height: 24, borderRadius: '50%' }} />
         <span style={{ fontFamily: 'Orbitron, Arial, sans-serif', fontWeight: 700, color: '#00D4FF', fontSize: 15, textTransform: 'uppercase', letterSpacing: 1 }}>{selectedChain.name}</span>
       </div>
     </div>
