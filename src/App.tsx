@@ -20,9 +20,9 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <WagmiProvider config={config}>
-      <RainbowKitProvider>
-        <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <WagmiProvider config={config}>
+        <RainbowKitProvider>
           <ChainProvider>
             <Router>
               <div className="App">
@@ -41,9 +41,9 @@ function App() {
               </div>
             </Router>
           </ChainProvider>
-        </QueryClientProvider>
-      </RainbowKitProvider>
-    </WagmiProvider>
+        </RainbowKitProvider>
+      </WagmiProvider>
+    </QueryClientProvider>
   );
 }
 
