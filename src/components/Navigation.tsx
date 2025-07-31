@@ -55,18 +55,6 @@ const Navigation: React.FC = () => {
                   <Button
                     variant={location.pathname === item.path ? "primary" : "secondary"}
                     size="small"
-                    style={{
-                      backgroundColor: location.pathname === item.path 
-                        ? 'var(--omni-primary)' 
-                        : 'transparent',
-                      border: location.pathname === item.path 
-                        ? '1px solid var(--omni-primary)' 
-                        : '1px solid rgba(99, 102, 241, 0.2)',
-                      color: location.pathname === item.path 
-                        ? 'white' 
-                        : 'var(--omni-text)',
-                      transition: 'all 0.3s ease',
-                    }}
                   >
                     {item.label}
                   </Button>
