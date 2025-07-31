@@ -2,8 +2,9 @@ import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { mainnet } from 'wagmi/chains';
 import { http } from 'viem';
 
-// Ink Layer 2 Chain Configuration
+// Ink Layer 2 Chain Configuration - using mainnet as base like Mavrk
 const inkChain = {
+  ...mainnet,
   id: 57073,
   name: 'Ink Layer 2',
   network: 'ink',
