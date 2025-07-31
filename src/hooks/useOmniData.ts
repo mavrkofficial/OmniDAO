@@ -54,7 +54,7 @@ export const useOmniData = () => {
   });
 
   // LP Locker (placeholder for now)
-  const { data: lpLockerTotalSupply, isLoading: lpLockerLoading } = useReadContract({
+  const { isLoading: lpLockerLoading } = useReadContract({
     address: CONTRACTS.OMNILP_LOCKER as `0x${string}`,
     abi: OMNILP_LOCKER_ABI,
     functionName: 'totalSupply',
