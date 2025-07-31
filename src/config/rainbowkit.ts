@@ -28,8 +28,12 @@ const { connectors } = getDefaultWallets({
 });
 
 export const wagmiConfig = createConfig({
+  chains,
   connectors,
   transports: {
     [inkChain.id]: http(),
   },
-}); 
+});
+
+// Export chains for potential use elsewhere
+export { chains }; 

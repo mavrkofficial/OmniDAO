@@ -21,38 +21,14 @@ interface ChainContextType {
 
 const defaultChains: Chain[] = [
   {
-    id: 1,
-    name: 'Ethereum',
-    logoUrl: 'https://cryptologos.cc/logos/ethereum-eth-logo.png',
-    rpcUrl: 'https://mainnet.infura.io/v3/YOUR_INFURA_KEY',
-    blockExplorer: 'https://etherscan.io',
+    id: 57073,
+    name: 'Ink Layer 2',
+    logoUrl: 'https://explorer.inkonchain.com/favicon.ico',
+    rpcUrl: 'https://ink.drpc.org',
+    blockExplorer: 'https://explorer.inkonchain.com',
     nativeCurrency: {
-      name: 'Ether',
-      symbol: 'ETH',
-      decimals: 18,
-    },
-  },
-  {
-    id: 137,
-    name: 'Polygon',
-    logoUrl: 'https://cryptologos.cc/logos/polygon-matic-logo.png',
-    rpcUrl: 'https://polygon-rpc.com',
-    blockExplorer: 'https://polygonscan.com',
-    nativeCurrency: {
-      name: 'MATIC',
-      symbol: 'MATIC',
-      decimals: 18,
-    },
-  },
-  {
-    id: 56,
-    name: 'BSC',
-    logoUrl: 'https://cryptologos.cc/logos/bnb-bnb-logo.png',
-    rpcUrl: 'https://bsc-dataseed.binance.org',
-    blockExplorer: 'https://bscscan.com',
-    nativeCurrency: {
-      name: 'BNB',
-      symbol: 'BNB',
+      name: 'INK',
+      symbol: 'INK',
       decimals: 18,
     },
   },
