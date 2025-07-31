@@ -34,7 +34,7 @@ const Navigation: React.FC = () => {
           <div>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <img 
-                src="https://omnidao.s3.us-east-2.amazonaws.com/02_OMNI_LOGO_NAME.png" 
+                src="https://omnidao.s3.us-east-2.amazonaws.com/W02_OMNI_LOGO_NAME.png" 
                 alt="Omni DAO" 
                 style={{ 
                   height: '40px', 

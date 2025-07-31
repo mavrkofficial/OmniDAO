@@ -85,7 +85,7 @@ const Dashboard: React.FC = () => {
             Welcome to the
           </span>
           <img 
-            src="https://omnidao.s3.us-east-2.amazonaws.com/03_OMNI_DAO_LOGO.png" 
+            src="https://omnidao.s3.us-east-2.amazonaws.com/W03_OMNI_DAO_LOGO.png" 
             alt="Omni DAO" 
             style={{ 
               height: '2.5rem',
@@ -100,8 +100,7 @@ const Dashboard: React.FC = () => {
           margin: '0 auto',
           fontFamily: 'Orbitron, Arial, sans-serif'
         }}>
-          Fully modular, DAO-governed liquidity infrastructure protocol for Ink L2. 
-          Experience the revolutionary deflationary mechanism disguised as inflation.
+          Fully modular, DAO-governed liquidity infrastructure and revenue share protocol on the Ink Network. 
         </span>
       </div>
 
@@ -220,7 +219,7 @@ const Dashboard: React.FC = () => {
       {/* Bottom Image */}
       <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '2rem' }}>
         <img 
-          src="https://omnidao.s3.us-east-2.amazonaws.com/04_Believe_In_Something.png" 
+          src="https://omnidao.s3.us-east-2.amazonaws.com/W04_Believe_In_Something.png" 
           alt="Believe In Something" 
           style={{ 
             maxWidth: '600px', 
