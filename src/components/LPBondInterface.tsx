@@ -86,13 +86,15 @@ const LPBondInterface: React.FC = () => {
               <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
                 {lpPools.map((pool) => (
                   <div style={{ flex: "1 1 300px", minWidth: "300px" }} key={pool.symbol}>
-                    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-card" 
-                      style={{ 
-                        cursor: 'pointer',
-                        border: selectedPool === pool.symbol ? '2px solid var(--omni-primary)' : '1px solid rgba(99, 102, 241, 0.2)',
-                        textAlign: 'center',
-                        padding: '1rem'
-                      }}
+                    <div style={{ 
+                      background: "var(--omni-card-bg)", 
+                      borderRadius: "12px", 
+                      padding: "1rem",
+                      border: selectedPool === pool.symbol ? '2px solid var(--omni-primary)' : '1px solid var(--omni-border)',
+                      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                      cursor: 'pointer',
+                      textAlign: 'center'
+                    }} className="omni-card"
                       onClick={() => handlePoolSelect(pool.symbol)}
                     >
                       <span style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{pool.icon}</span>
