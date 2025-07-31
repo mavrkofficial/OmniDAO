@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@inkonchain/ink-kit';
 import { useOmniData } from '../hooks/useOmniData';
+import PresaleInterface from './PresaleInterface';
 
 const Dashboard: React.FC = () => {
   const { 
@@ -69,6 +70,9 @@ const Dashboard: React.FC = () => {
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+      {/* Presale Section */}
+      <PresaleInterface />
+      
       {/* Hero Section */}
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <div style={{ 
