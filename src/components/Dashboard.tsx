@@ -31,18 +31,24 @@ const Dashboard: React.FC = () => {
     value, 
     subtitle 
   }) => (
-    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }} className="omni-stat-card">
-      <span className="omni-stat-value">{value}</span>
-      <span className="omni-stat-label">{title}</span>
-      {subtitle && (
-        <span style={{ 
-          color: 'var(--omni-text-secondary)', 
-          fontSize: '0.75rem',
-          marginTop: '0.5rem'
-        }}>
-          {subtitle}
-        </span>
-      )}
+    <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", textAlign: "center" }} className="omni-stat-card">
+      <div style={{ marginBottom: "0.5rem" }}>
+        <span className="omni-stat-value" style={{ display: "block", textAlign: "center" }}>{value}</span>
+      </div>
+      <div style={{ textAlign: "center" }}>
+        <span className="omni-stat-label" style={{ display: "block", textAlign: "center" }}>{title}</span>
+        {subtitle && (
+          <span style={{ 
+            color: 'var(--omni-text-secondary)', 
+            fontSize: '0.75rem',
+            marginTop: '0.25rem',
+            display: 'block',
+            textAlign: 'center'
+          }}>
+            {subtitle}
+          </span>
+        )}
+      </div>
     </div>
   );
 
