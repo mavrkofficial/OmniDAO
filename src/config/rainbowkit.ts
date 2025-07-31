@@ -25,7 +25,6 @@ const chains = [inkChain];
 const { connectors } = getDefaultWallets({
   appName: 'Omni DAO',
   projectId: process.env.REACT_APP_WALLETCONNECT_PROJECT_ID || '9c73cb7134cec477e1ef752dd9b4ba3b',
-  chains,
 });
 
 export const wagmiConfig = createConfig({
