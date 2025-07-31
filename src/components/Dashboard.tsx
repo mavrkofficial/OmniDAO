@@ -54,13 +54,13 @@ const Dashboard: React.FC = () => {
         <span style={{ fontSize: '1.5rem' }}>{icon}</span>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--omni-text)' }}>{title}</h3>
       </div>
-      <span style={{ 
+      <div style={{ 
         color: 'var(--omni-text-secondary)', 
         marginBottom: '1rem',
         fontSize: '0.875rem'
       }}>
         {description}
-      </span>
+      </div>
       <Button variant="primary" size="small">
         {action}
       </Button>
@@ -121,13 +121,13 @@ const Dashboard: React.FC = () => {
         </span>
       </div>
 
-      {/* Stats Grid - 2 rows of 3 on desktop */}
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'repeat(3, 1fr)', 
-        gap: '1rem',
-        marginBottom: '2rem'
-      }}>
+             {/* Stats Grid - 2 rows of 3 on desktop, 1 column on mobile */}
+       <div style={{ 
+         display: 'grid', 
+         gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+         gap: '1rem',
+         marginBottom: '2rem'
+       }}>
         {/* Row 1 */}
         <StatCard 
           title="Total Value Locked" 
@@ -173,13 +173,13 @@ const Dashboard: React.FC = () => {
         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--omni-text)', fontFamily: 'Orbitron, Arial, sans-serif' }}>Quick Actions</h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
           <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
-            <QuickActionCard
-              title="Create Bond"
-              description="Purchase OMNI tokens at a discount through our bonding mechanism"
-              action="Start Bonding"
-              icon="🔗"
-              onClick={() => window.location.href = '/bonds'}
-            />
+                         <QuickActionCard
+               title="Create Bond"
+               description="Purchase OMNI tokens at a discount through our bonding mechanism"
+               action="Explore Token Bonds"
+               icon="🔗"
+               onClick={() => window.location.href = '/bonds'}
+             />
           </div>
           <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
@@ -229,22 +229,7 @@ const Dashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* Connection Status */}
-      <div style={{ 
-        marginTop: '2rem',
-        textAlign: 'center',
-        background: 'rgba(239, 68, 68, 0.1)',
-        border: '1px solid var(--omni-error)',
-        borderRadius: '8px',
-        padding: '1rem'
-      }}>
-        <span style={{ color: 'var(--omni-error)', marginBottom: '1rem', display: 'block' }}>
-          ⚠️ Connect your wallet to interact with Omni DAO
-        </span>
-        <span style={{ color: 'var(--omni-text-secondary)', fontSize: '0.875rem' }}>
-          You need to connect your wallet to access all features and view your personal data.
-        </span>
-      </div>
+      
 
       {/* Bottom Image */}
       <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
