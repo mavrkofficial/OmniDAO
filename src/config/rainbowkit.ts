@@ -28,7 +28,7 @@ const chains = [inkChain];
 export const config = getDefaultConfig({
   appName: 'Omni DAO',
   projectId: process.env.REACT_APP_WALLETCONNECT_PROJECT_ID || '9c73cb7134cec477e1ef752dd9b4ba3b',
-  chains,
+  chains: chains as any,
   transports: {
     [inkChain.id]: http(),
   },
