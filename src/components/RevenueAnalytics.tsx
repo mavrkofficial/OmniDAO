@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@inkonchain/ink-kit';
 
 const RevenueAnalytics: React.FC = () => {
-  const [isConnected] = useState(false); // Mock connection state
   const [timeframe, setTimeframe] = useState('7d');
-  const [selectedMetric] = useState('revenue');
 
   const revenueData = {
     totalRevenue: '$45,230',
