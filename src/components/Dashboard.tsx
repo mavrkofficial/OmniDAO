@@ -121,8 +121,14 @@ const Dashboard: React.FC = () => {
         </span>
       </div>
 
-      {/* Stats Grid */}
-      <div className="omni-stats-grid">
+      {/* Stats Grid - 2 rows of 3 on desktop */}
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(3, 1fr)', 
+        gap: '1rem',
+        marginBottom: '2rem'
+      }}>
+        {/* Row 1 */}
         <StatCard 
           title="Total Value Locked" 
           value={totalValueLocked}
@@ -140,6 +146,8 @@ const Dashboard: React.FC = () => {
           subtitle="Total bond purchases"
           loading={isLoading}
         />
+        
+        {/* Row 2 */}
         <StatCard 
           title="Total Staked $OMNI" 
           value={totalStaked}

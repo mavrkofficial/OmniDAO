@@ -80,7 +80,7 @@ export const useOmniData = () => {
 
   return {
     // Row 1
-    totalValueLocked: '$1,250,000', // Placeholder - will need complex LP calculation
+    totalValueLocked: '$0', // No NFTs in locker yet
     omniTokenPrice: '$0.0005', // Placeholder - will use DexScreener API
     bondsCreated: formatNumber(totalBonds),
     
