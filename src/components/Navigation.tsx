@@ -68,13 +68,14 @@ const Navigation: React.FC = () => {
                   to={item.path}
                   style={{ textDecoration: 'none' }}
                 >
-                  <Button
-                    variant={location.pathname === item.path ? "primary" : "secondary"}
-                    size="small"
-                    style={{ width: '100%', fontSize: '0.8rem' }}
-                  >
-                    {item.label}
-                  </Button>
+                  <div style={{ width: '100%', fontSize: '0.8rem' }}>
+                    <Button
+                      variant={location.pathname === item.path ? "primary" : "secondary"}
+                      size="small"
+                    >
+                      {item.label}
+                    </Button>
+                  </div>
                 </Link>
               ))}
             </div>
