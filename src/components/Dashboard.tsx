@@ -77,7 +77,7 @@ const Dashboard: React.FC = () => {
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <div style={{ marginBottom: '1rem' }}>
           <img 
-            src="/images/omni-dao-logo.png" 
+            src="https://omnidao.s3.us-east-2.amazonaws.com/03_OMNI_DAO_LOGO.png" 
             alt="Omni DAO" 
             style={{ 
               maxWidth: '400px', 
@@ -213,7 +213,7 @@ const Dashboard: React.FC = () => {
       {/* Bottom Image */}
       <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '2rem' }}>
         <img 
-          src="/images/believe-in-something.png" 
+          src="https://omnidao.s3.us-east-2.amazonaws.com/04_Believe_In_Something.png" 
           alt="Believe In Something" 
           style={{ 
             maxWidth: '600px', 
