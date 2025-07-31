@@ -2,19 +2,22 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@inkonchain/ink-kit';
 import WalletConnect from './WalletConnect';
+import { getAppConfig } from '../config/appConfig';
 
 const Navigation: React.FC = () => {
   const location = useLocation();
 
+  const config = getAppConfig();
+  
   const navItems = [
-    { path: '/presale', label: 'Presale' },
-    { path: '/', label: 'Dashboard' },
-    { path: '/bonds', label: 'Bonds' },
-    { path: '/lp-bonds', label: 'LP Bonds' },
-    { path: '/governance', label: 'Governance' },
-    { path: '/staking', label: 'Staking' },
-    { path: '/analytics', label: 'Analytics' },
-  ];
+    { path: '/presale', label: 'Presale', enabled: config.enabledSections.presale },
+    { path: '/', label: 'Dashboard', enabled: config.enabledSections.dashboard },
+    { path: '/bonds', label: 'Bonds', enabled: config.enabledSections.bonds },
+    { path: '/lp-bonds', label: 'LP Bonds', enabled: config.enabledSections.lpBonds },
+    { path: '/governance', label: 'Governance', enabled: config.enabledSections.governance },
+    { path: '/staking', label: 'Staking', enabled: config.enabledSections.staking },
+    { path: '/analytics', label: 'Analytics', enabled: config.enabledSections.analytics },
+  ].filter(item => item.enabled);
 
   // const shortenAddress = (address: string) => {
   //   return `${address.slice(0, 6)}...${address.slice(-4)}`;
