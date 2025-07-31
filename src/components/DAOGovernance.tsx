@@ -155,7 +155,7 @@ const DAOGovernance: React.FC = () => {
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
                      <Button
              variant="primary"
-             size="sm"
+             size="small"
              onClick={() => handleVote(proposal.id, 'for')}
              disabled={!isConnected || proposal.status !== 'Active'}
            >
@@ -163,7 +163,7 @@ const DAOGovernance: React.FC = () => {
           </Button>
                      <Button
              variant="secondary"
-             size="sm"
+             size="small"
              onClick={() => handleVote(proposal.id, 'against')}
              disabled={!isConnected || proposal.status !== 'Active'}
            >
@@ -307,7 +307,7 @@ const DAOGovernance: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <Button variant="primary" size="sm" disabled={!isConnected}>
+                <Button variant="primary" size="small" disabled={!isConnected}>
                   Update Allocation
                 </Button>
               </div>
@@ -330,7 +330,7 @@ const DAOGovernance: React.FC = () => {
                     <span style={{ marginLeft: '0.5rem' }}>0.1 ETH</span>
                   </div>
                 </div>
-                <Button variant="primary" size="sm" disabled={!isConnected}>
+                <Button variant="primary" size="small" disabled={!isConnected}>
                   Update Parameters
                 </Button>
               </div>

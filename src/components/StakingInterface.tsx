@@ -152,7 +152,7 @@ const StakingInterface: React.FC = () => {
 
             <Button
               variant="primary"
-              size="sm"
+              size="small"
               onClick={handleClaimRewards}
               disabled={!isConnected || Number(claimAmount) <= 0}
             >

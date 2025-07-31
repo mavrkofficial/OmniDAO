@@ -65,7 +65,7 @@ const Dashboard: React.FC = () => {
       }}>
         {description}
       </span>
-      <Button variant="primary" size="sm">
+      <Button variant="primary" size="small">
         {action}
       </Button>
     </div>

@@ -54,7 +54,7 @@ const Navigation: React.FC = () => {
                 >
                   <Button
                     variant={location.pathname === item.path ? "primary" : "secondary"}
-                    size="sm"
+                    size="small"
                     style={{
                       backgroundColor: location.pathname === item.path 
                         ? 'var(--omni-primary)' 

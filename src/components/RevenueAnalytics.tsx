@@ -94,21 +94,21 @@ const RevenueAnalytics: React.FC = () => {
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <Button
                   variant={timeframe === '7d' ? "primary" : "secondary"}
-                  size="sm"
+                  size="small"
                   onClick={() => handleTimeframeChange('7d')}
                 >
                   7D
                 </Button>
                 <Button
                   variant={timeframe === '30d' ? "primary" : "secondary"}
-                  size="sm"
+                  size="small"
                   onClick={() => handleTimeframeChange('30d')}
                 >
                   30D
                 </Button>
                 <Button
                   variant={timeframe === '90d' ? "primary" : "secondary"}
-                  size="sm"
+                  size="small"
                   onClick={() => handleTimeframeChange('90d')}
                 >
                   90D
