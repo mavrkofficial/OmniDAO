@@ -15,9 +15,9 @@ const Navigation: React.FC = () => {
     { path: '/analytics', label: 'Analytics' },
   ];
 
-  const shortenAddress = (address: string) => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
-  };
+  // const shortenAddress = (address: string) => {
+  //   return `${address.slice(0, 6)}...${address.slice(-4)}`;
+  // };
 
   return (
     <div className="omni-navigation" style={{

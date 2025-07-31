@@ -1,5 +1,4 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
-import { mainnet } from 'wagmi/chains';
 import { http } from 'viem';
 
 // Ink Layer 2 Chain Configuration - EXACT same structure as Mavrk

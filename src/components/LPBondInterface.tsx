@@ -6,7 +6,7 @@ const LPBondInterface: React.FC = () => {
   const [lpAmount, setLpAmount] = useState('');
   const [bondAmount, setBondAmount] = useState('0');
   const [discount, setDiscount] = useState('8.5%');
-  const [isConnected, setIsConnected] = useState(false); // Mock connection state
+  const [isConnected] = useState(false); // Mock connection state
 
   const lpPools = [
     { 

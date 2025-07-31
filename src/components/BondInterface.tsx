@@ -6,7 +6,7 @@ const BondInterface: React.FC = () => {
   const [amount, setAmount] = useState('');
   const [bondAmount, setBondAmount] = useState('0');
   const [discount, setDiscount] = useState('5.2%');
-  const [isConnected, setIsConnected] = useState(false); // Mock connection state
+  const [isConnected] = useState(false); // Mock connection state
 
   const bondTokens = [
     { symbol: 'ETH', name: 'Ethereum', icon: '🔷' },

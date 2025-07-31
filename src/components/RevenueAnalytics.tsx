@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Button } from '@inkonchain/ink-kit';
 
 const RevenueAnalytics: React.FC = () => {
-  const [isConnected, setIsConnected] = useState(false); // Mock connection state
+  const [isConnected] = useState(false); // Mock connection state
   const [timeframe, setTimeframe] = useState('7d');
-  const [selectedMetric, setSelectedMetric] = useState('revenue');
+  const [selectedMetric] = useState('revenue');
 
   const revenueData = {
     totalRevenue: '$45,230',
@@ -22,25 +22,25 @@ const RevenueAnalytics: React.FC = () => {
     development: '10%'
   };
 
-  const mockChartData = [
-    { date: '2024-01-01', revenue: 1200, bonds: 800, fees: 400 },
-    { date: '2024-01-02', revenue: 1350, bonds: 900, fees: 450 },
-    { date: '2024-01-03', revenue: 1100, bonds: 700, fees: 400 },
-    { date: '2024-01-04', revenue: 1600, bonds: 1000, fees: 600 },
-    { date: '2024-01-05', revenue: 1400, bonds: 900, fees: 500 },
-    { date: '2024-01-06', revenue: 1800, bonds: 1200, fees: 600 },
-    { date: '2024-01-07', revenue: 1507, bonds: 950, fees: 557 },
-  ];
+  // const mockChartData = [
+  //   { date: '2024-01-01', revenue: 1200, bonds: 800, fees: 400 },
+  //   { date: '2024-01-02', revenue: 1350, bonds: 900, fees: 450 },
+  //   { date: '2024-01-03', revenue: 1100, bonds: 700, fees: 400 },
+  //   { date: '2024-01-04', revenue: 1600, bonds: 1000, fees: 600 },
+  //   { date: '2024-01-05', revenue: 1400, bonds: 900, fees: 500 },
+  //   { date: '2024-01-06', revenue: 1800, bonds: 1200, fees: 600 },
+  //   { date: '2024-01-07', revenue: 1507, bonds: 950, fees: 557 },
+  // ];
 
   const handleTimeframeChange = (newTimeframe: string) => {
     setTimeframe(newTimeframe);
     // In real app, this would fetch new data based on timeframe
   };
 
-  const handleMetricChange = (metric: string) => {
-    setSelectedMetric(metric);
-    // In real app, this would update chart display
-  };
+  // const handleMetricChange = (metric: string) => {
+  //   setSelectedMetric(metric);
+  //   // In real app, this would update chart display
+  // };
 
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
