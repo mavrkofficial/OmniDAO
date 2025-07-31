@@ -1,9 +1,8 @@
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
-import { createConfig, http, mainnet } from 'wagmi';
+import { createConfig, http } from 'wagmi';
 
-// Use mainnet as a base and override with Ink Layer 2 details
+// Ink Layer 2 Chain Configuration
 const inkChain = {
-  ...mainnet,
   id: 57073,
   name: 'Ink Layer 2',
   network: 'ink',
@@ -19,7 +18,7 @@ const inkChain = {
   blockExplorers: {
     default: { name: 'Ink Explorer', url: 'https://explorer.inkonchain.com' },
   },
-};
+} as any;
 
 const chains = [inkChain];
 
