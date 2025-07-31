@@ -29,9 +29,16 @@ const Navigation: React.FC = () => {
       zIndex: 1000,
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: '1rem 0', flexWrap: "wrap", gap: "1rem" }}>
-          {/* Logo and Brand */}
-          <div>
+        <div style={{ 
+          display: "flex", 
+          flexDirection: "column",
+          alignItems: "center", 
+          justifyContent: "center", 
+          padding: '1rem 0', 
+          gap: "1rem" 
+        }}>
+          {/* Logo and Brand - Centered */}
+          <div style={{ textAlign: 'center' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <img 
                 src="https://omnidao.s3.us-east-2.amazonaws.com/W02_OMNI_LOGO_NAME.png" 
@@ -39,15 +46,22 @@ const Navigation: React.FC = () => {
                 style={{ 
                   height: '40px', 
                   cursor: 'pointer',
-                  filter: 'brightness(1.1) contrast(1.1)'
+                  filter: 'brightness(1.1) contrast(1.1)',
+                  maxWidth: '100%'
                 }} 
               />
             </Link>
           </div>
 
-          {/* Navigation Links */}
-          <div>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          {/* Navigation Links - Centered Grid */}
+          <div style={{ textAlign: 'center', width: '100%' }}>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '8px', 
+              maxWidth: '400px',
+              margin: '0 auto'
+            }}>
               {navItems.map((item) => (
                 <Link 
                   key={item.path} 
@@ -57,6 +71,7 @@ const Navigation: React.FC = () => {
                   <Button
                     variant={location.pathname === item.path ? "primary" : "secondary"}
                     size="small"
+                    style={{ width: '100%', fontSize: '0.8rem' }}
                   >
                     {item.label}
                   </Button>
@@ -65,12 +80,12 @@ const Navigation: React.FC = () => {
             </div>
           </div>
 
-          {/* Wallet Connection */}
-          <div>
+          {/* Wallet Connection - Centered */}
+          <div style={{ textAlign: 'center' }}>
             <WalletConnect />
           </div>
         </div>
-              </div>
+      </div>
     </div>
   );
 };

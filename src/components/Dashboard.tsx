@@ -81,30 +81,51 @@ const Dashboard: React.FC = () => {
     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
       {/* Hero Section */}
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-          <span style={{ 
-            fontSize: '2.5rem', 
-            fontWeight: 'bold', 
-            color: 'var(--omni-text)',
-            fontFamily: 'Orbitron, Arial, sans-serif'
+        <div style={{ 
+          marginBottom: '1rem', 
+          display: 'flex', 
+          flexDirection: 'column',
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          gap: '8px',
+          padding: '0 1rem'
+        }}>
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'row',
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            gap: '8px',
+            flexWrap: 'wrap'
           }}>
-            Welcome to the
-          </span>
-          <img 
-            src="https://omnidao.s3.us-east-2.amazonaws.com/W03_OMNI_DAO_LOGO.png" 
-            alt="Omni DAO" 
-            style={{ 
-              height: '2.5rem',
-              filter: 'brightness(1.1) contrast(1.1)'
-            }} 
-          />
+            <span style={{ 
+              fontSize: 'clamp(1.5rem, 4vw, 2.5rem)', 
+              fontWeight: 'bold', 
+              color: 'var(--omni-text)',
+              fontFamily: 'Orbitron, Arial, sans-serif',
+              whiteSpace: 'nowrap'
+            }}>
+              Welcome to the
+            </span>
+            <img 
+              src="https://omnidao.s3.us-east-2.amazonaws.com/W03_OMNI_DAO_LOGO.png" 
+              alt="Omni DAO" 
+              style={{ 
+                height: 'clamp(1.5rem, 4vw, 2.5rem)',
+                filter: 'brightness(1.1) contrast(1.1)',
+                maxWidth: '100%'
+              }} 
+            />
+          </div>
         </div>
         <span style={{ 
           color: 'var(--omni-text-secondary)', 
-          fontSize: '1.125rem',
+          fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)',
           maxWidth: '600px',
           margin: '0 auto',
-          fontFamily: 'Orbitron, Arial, sans-serif'
+          fontFamily: 'Orbitron, Arial, sans-serif',
+          padding: '0 1rem',
+          lineHeight: '1.4'
         }}>
           Fully modular, DAO-governed liquidity infrastructure and revenue share protocol on the Ink Network. 
         </span>
