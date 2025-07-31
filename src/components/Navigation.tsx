@@ -21,7 +21,7 @@ const Navigation: React.FC = () => {
 
   return (
     <div className="omni-navigation" style={{
-      background: 'rgba(15, 15, 35, 0.9)',
+      background: 'rgba(31, 20, 44, 0.95)',
       backdropFilter: 'blur(10px)',
       borderBottom: '1px solid rgba(99, 102, 241, 0.2)',
       position: 'sticky',

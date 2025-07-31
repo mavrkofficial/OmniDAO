@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  background: #160c21;
 }
 
 .main-container {
@@ -19,7 +19,7 @@
 
 /* Omni DAO specific components */
 .omni-card {
-  background: rgba(26, 26, 46, 0.8);
+  background: rgba(31, 20, 44, 0.9);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(99, 102, 241, 0.2);
   border-radius: 16px;
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .omni-stat-card {
-  background: rgba(26, 26, 46, 0.6);
+  background: rgba(31, 20, 44, 0.9);
   border: 1px solid rgba(99, 102, 241, 0.1);
   border-radius: 12px;
   padding: 1.5rem;

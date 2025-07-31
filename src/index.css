@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  background: #160c21;
   min-height: 100vh;
 }
 
@@ -24,10 +24,12 @@ code {
   --omni-success: #10b981;
   --omni-warning: #f59e0b;
   --omni-error: #ef4444;
-  --omni-background: #0f0f23;
-  --omni-surface: #1a1a2e;
+  --omni-background: #160c21;
+  --omni-surface: #1f142c;
+  --omni-card-bg: #1f142c;
   --omni-text: #f8fafc;
   --omni-text-secondary: #94a3b8;
+  --omni-border: rgba(99, 102, 241, 0.2);
 }
 
 /* Custom scrollbar */
