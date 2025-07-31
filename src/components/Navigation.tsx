@@ -7,8 +7,8 @@ const Navigation: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: 'Dashboard' },
     { path: '/presale', label: 'Presale' },
+    { path: '/', label: 'Dashboard' },
     { path: '/bonds', label: 'Bonds' },
     { path: '/lp-bonds', label: 'LP Bonds' },
     { path: '/governance', label: 'Governance' },
@@ -58,9 +58,9 @@ const Navigation: React.FC = () => {
           <div style={{ textAlign: 'center', width: '100%' }}>
             <div style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
+              gridTemplateColumns: 'repeat(3, 1fr)',
               gap: '8px', 
-              maxWidth: '600px',
+              maxWidth: '400px',
               margin: '0 auto'
             }}>
               {navItems.map((item) => (
