@@ -1,9 +1,8 @@
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
 import { createConfig, http } from 'wagmi';
-import { Chain } from 'wagmi';
 
 // Ink Layer 2 Chain Configuration
-const inkChain: Chain = {
+const inkChain = {
   id: 57073,
   name: 'Ink Layer 2',
   network: 'ink',
