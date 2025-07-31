@@ -2,15 +2,14 @@ import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { mainnet } from 'wagmi/chains';
 import { http } from 'viem';
 
-// Ink Layer 2 Chain Configuration - using mainnet as base like Mavrk
+// Ink Layer 2 Chain Configuration - EXACT same structure as Mavrk
 const inkChain = {
-  ...mainnet,
   id: 57073,
-  name: 'Ink Layer 2',
+  name: 'INK L2',
   network: 'ink',
   nativeCurrency: {
-    name: 'INK',
-    symbol: 'INK',
+    name: 'Ether',
+    symbol: 'ETH',
     decimals: 18,
   },
   rpcUrls: {
@@ -18,7 +17,7 @@ const inkChain = {
     public: { http: ['https://ink.drpc.org'] },
   },
   blockExplorers: {
-    default: { name: 'Ink Explorer', url: 'https://explorer.inkonchain.com' },
+    default: { name: 'INKScan', url: 'https://inkscan.ink' },
   },
   testnet: false,
   ens: null,
