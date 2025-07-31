@@ -1,8 +1,8 @@
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
-import { createConfig, http, defineChain } from 'wagmi';
+import { createConfig, http } from 'wagmi';
 
 // Ink Layer 2 Chain Configuration
-const inkChain = defineChain({
+const inkChain = {
   id: 57073,
   name: 'Ink Layer 2',
   network: 'ink',
@@ -18,7 +18,7 @@ const inkChain = defineChain({
   blockExplorers: {
     default: { name: 'Ink Explorer', url: 'https://explorer.inkonchain.com' },
   },
-});
+} as const;
 
 const chains = [inkChain];
 
