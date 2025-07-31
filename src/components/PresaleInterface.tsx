@@ -35,34 +35,35 @@ const PresaleInterface: React.FC = () => {
       marginBottom: '2rem',
       boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
     }}>
-      <h2 style={{ 
-        fontSize: '2rem', 
-        fontWeight: 'bold', 
-        marginBottom: '2rem', 
-        color: 'var(--omni-text)', 
-        fontFamily: 'Orbitron, Arial, sans-serif',
-        textAlign: 'center'
-      }}>
+             <h2 style={{ 
+         fontSize: 'clamp(1.5rem, 4vw, 2rem)', 
+         fontWeight: 'bold', 
+         marginBottom: '1.5rem', 
+         color: 'var(--omni-text)', 
+         fontFamily: 'Orbitron, Arial, sans-serif',
+         textAlign: 'center'
+       }}>
         Omni Presale
       </h2>
 
              <div style={{ 
          display: 'grid', 
-         gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
-         gap: '2rem',
+         gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+         gap: '1rem',
          marginBottom: '2rem'
        }}>
          {/* Left Side - Presale Interface */}
-         <div style={{ 
-           background: 'rgba(0, 212, 255, 0.05)', 
-           borderRadius: '12px', 
-           padding: '1.5rem',
-           border: '1px solid rgba(0, 212, 255, 0.2)'
-         }}>
+                   <div style={{ 
+            background: 'rgba(0, 212, 255, 0.05)', 
+            borderRadius: '12px', 
+            padding: '1rem',
+            border: '1px solid rgba(0, 212, 255, 0.2)',
+            minHeight: 'fit-content'
+          }}>
            <h3 style={{ 
-             fontSize: '1.5rem', 
+             fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', 
              fontWeight: 'bold', 
-             marginBottom: '1.5rem', 
+             marginBottom: '1rem', 
              color: 'var(--omni-text)',
              fontFamily: 'Orbitron, Arial, sans-serif'
            }}>
@@ -142,19 +143,20 @@ const PresaleInterface: React.FC = () => {
            </div>
          </div>
 
-         {/* Right Side - User Profile */}
-         <div style={{ 
-           background: 'rgba(99, 102, 241, 0.05)', 
-           borderRadius: '12px', 
-           padding: '1.5rem',
-           border: '1px solid rgba(99, 102, 241, 0.2)'
-         }}>
+                   {/* Right Side - User Profile */}
+          <div style={{ 
+            background: 'rgba(99, 102, 241, 0.05)', 
+            borderRadius: '12px', 
+            padding: '1rem',
+            border: '1px solid rgba(99, 102, 241, 0.2)',
+            minHeight: 'fit-content'
+          }}>
            {isConnected ? (
              <>
                <h3 style={{ 
-                 fontSize: '1.5rem', 
+                 fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', 
                  fontWeight: 'bold', 
-                 marginBottom: '1.5rem', 
+                 marginBottom: '1rem', 
                  color: 'var(--omni-text)',
                  fontFamily: 'Orbitron, Arial, sans-serif'
                }}>
@@ -207,38 +209,38 @@ const PresaleInterface: React.FC = () => {
          </div>
        </div>
 
-       {/* Global Presale Statistics - Separate Section */}
-       <div style={{ 
-         background: 'var(--omni-card-bg)', 
-         borderRadius: '16px', 
-         padding: '2rem', 
-         border: '1px solid var(--omni-border)', 
-         marginBottom: '2rem',
-         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
-       }}>
-         <h3 style={{ 
-           fontSize: '1.5rem', 
-           fontWeight: 'bold', 
-           marginBottom: '2rem', 
-           color: 'var(--omni-text)', 
-           fontFamily: 'Orbitron, Arial, sans-serif',
-           textAlign: 'center'
-         }}>
+               {/* Global Presale Statistics - Separate Section */}
+        <div style={{ 
+          background: 'var(--omni-card-bg)', 
+          borderRadius: '16px', 
+          padding: '1rem', 
+          border: '1px solid var(--omni-border)', 
+          marginBottom: '2rem',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
+        }}>
+                   <h3 style={{ 
+            fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', 
+            fontWeight: 'bold', 
+            marginBottom: '1.5rem', 
+            color: 'var(--omni-text)', 
+            fontFamily: 'Orbitron, Arial, sans-serif',
+            textAlign: 'center'
+          }}>
            Global Presale Statistics
          </h3>
 
-         <div style={{ 
-           display: 'grid', 
-           gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-           gap: '1.5rem' 
-         }}>
-           <div style={{ 
-             background: 'rgba(0, 212, 255, 0.05)', 
-             borderRadius: '12px', 
-             padding: '1.5rem',
-             border: '1px solid rgba(0, 212, 255, 0.2)',
-             textAlign: 'center'
-           }}>
+                   <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+            gap: '1rem' 
+          }}>
+                       <div style={{ 
+              background: 'rgba(0, 212, 255, 0.05)', 
+              borderRadius: '12px', 
+              padding: '1rem',
+              border: '1px solid rgba(0, 212, 255, 0.2)',
+              textAlign: 'center'
+            }}>
              <span style={{ 
                color: 'var(--omni-text-secondary)', 
                fontSize: '0.875rem',
@@ -264,13 +266,13 @@ const PresaleInterface: React.FC = () => {
              </div>
            </div>
 
-           <div style={{ 
-             background: 'rgba(99, 102, 241, 0.05)', 
-             borderRadius: '12px', 
-             padding: '1.5rem',
-             border: '1px solid rgba(99, 102, 241, 0.2)',
-             textAlign: 'center'
-           }}>
+                       <div style={{ 
+              background: 'rgba(99, 102, 241, 0.05)', 
+              borderRadius: '12px', 
+              padding: '1rem',
+              border: '1px solid rgba(99, 102, 241, 0.2)',
+              textAlign: 'center'
+            }}>
              <span style={{ 
                color: 'var(--omni-text-secondary)', 
                fontSize: '0.875rem',
@@ -288,13 +290,13 @@ const PresaleInterface: React.FC = () => {
              </div>
            </div>
 
-           <div style={{ 
-             background: 'rgba(16, 185, 129, 0.05)', 
-             borderRadius: '12px', 
-             padding: '1.5rem',
-             border: '1px solid rgba(16, 185, 129, 0.2)',
-             textAlign: 'center'
-           }}>
+                       <div style={{ 
+              background: 'rgba(16, 185, 129, 0.05)', 
+              borderRadius: '12px', 
+              padding: '1rem',
+              border: '1px solid rgba(16, 185, 129, 0.2)',
+              textAlign: 'center'
+            }}>
              <span style={{ 
                color: 'var(--omni-text-secondary)', 
                fontSize: '0.875rem',
@@ -312,13 +314,13 @@ const PresaleInterface: React.FC = () => {
              </div>
            </div>
 
-           <div style={{ 
-             background: 'rgba(239, 68, 68, 0.05)', 
-             borderRadius: '12px', 
-             padding: '1.5rem',
-             border: '1px solid rgba(239, 68, 68, 0.2)',
-             textAlign: 'center'
-           }}>
+                       <div style={{ 
+              background: 'rgba(239, 68, 68, 0.05)', 
+              borderRadius: '12px', 
+              padding: '1rem',
+              border: '1px solid rgba(239, 68, 68, 0.2)',
+              textAlign: 'center'
+            }}>
              <span style={{ 
                color: 'var(--omni-text-secondary)', 
                fontSize: '0.875rem',
