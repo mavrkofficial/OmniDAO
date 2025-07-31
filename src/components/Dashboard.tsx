@@ -1,39 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button } from '@inkonchain/ink-kit';
+import { useOmniData } from '../hooks/useOmniData';
 
 const Dashboard: React.FC = () => {
-  const [stats, setStats] = useState({
-    totalValueLocked: '$0',
-    omniTokenPrice: '$0.0005',
-    totalBondsCreated: '0',
-    activeStakers: '0',
-    totalRevenue: '$0',
-    daoProposals: '0',
-  });
+  const { 
+    totalValueLocked, 
+    omniTokenPrice, 
+    bondsCreated, 
+    totalStaked, 
+    stakingRevenuePool, 
+    daoProposals,
+    isLoading 
+  } = useOmniData();
 
-  // Mock data - in real app, this would come from smart contracts
-  useEffect(() => {
-    // Simulate loading contract data
-    setTimeout(() => {
-      setStats({
-        totalValueLocked: '$1,250,000',
-        omniTokenPrice: '$0.0005',
-        totalBondsCreated: '156',
-        activeStakers: '2,847',
-        totalRevenue: '$45,230',
-        daoProposals: '12',
-      });
-    }, 1000);
-  }, []);
-
-  const StatCard: React.FC<{ title: string; value: string; subtitle?: string }> = ({ 
+  const StatCard: React.FC<{ title: string; value: string; subtitle?: string; loading?: boolean }> = ({ 
     title, 
     value, 
-    subtitle 
+    subtitle,
+    loading = false
   }) => (
     <div style={{ background: "var(--omni-card-bg)", borderRadius: "12px", padding: "1.5rem", border: "1px solid var(--omni-border)", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", textAlign: "center" }} className="omni-stat-card">
       <div style={{ marginBottom: "0.5rem" }}>
-        <span className="omni-stat-value" style={{ display: "block", textAlign: "center" }}>{value}</span>
+        <span className="omni-stat-value" style={{ display: "block", textAlign: "center" }}>
+          {loading ? 'Loading...' : value}
+        </span>
       </div>
       <div style={{ textAlign: "center" }}>
         <span className="omni-stat-label" style={{ display: "block", textAlign: "center" }}>{title}</span>
@@ -135,33 +125,38 @@ const Dashboard: React.FC = () => {
       <div className="omni-stats-grid">
         <StatCard 
           title="Total Value Locked" 
-          value={stats.totalValueLocked}
+          value={totalValueLocked}
           subtitle="Across all protocols"
+          loading={isLoading}
         />
         <StatCard 
           title="OMNI Token Price" 
-          value={stats.omniTokenPrice}
+          value={omniTokenPrice}
           subtitle="Current market price"
         />
         <StatCard 
           title="Bonds Created" 
-          value={stats.totalBondsCreated}
+          value={bondsCreated}
           subtitle="Total bond purchases"
+          loading={isLoading}
         />
         <StatCard 
-          title="Active Stakers" 
-          value={stats.activeStakers}
+          title="Total Staked $OMNI" 
+          value={totalStaked}
           subtitle="sOMNI holders"
+          loading={isLoading}
         />
         <StatCard 
-          title="Total Revenue" 
-          value={stats.totalRevenue}
-          subtitle="Distributed to stakers"
+          title="Staking Revenue Pool" 
+          value={stakingRevenuePool}
+          subtitle="Available for distribution"
+          loading={isLoading}
         />
         <StatCard 
           title="DAO Proposals" 
-          value={stats.daoProposals}
+          value={daoProposals}
           subtitle="Active governance"
+          loading={isLoading}
         />
       </div>
 
