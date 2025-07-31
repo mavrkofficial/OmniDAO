@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import '@rainbow-me/rainbowkit/styles.css';
 import './App.css';
 import Dashboard from './components/Dashboard';
+import Presale from './components/Presale';
 import BondInterface from './components/BondInterface';
 import LPBondInterface from './components/LPBondInterface';
 import DAOGovernance from './components/DAOGovernance';
@@ -31,6 +32,7 @@ function App() {
                 <div className="main-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
                   <Routes>
                     <Route path="/" element={<Dashboard />} />
+                    <Route path="/presale" element={<Presale />} />
                     <Route path="/bonds" element={<BondInterface />} />
                     <Route path="/lp-bonds" element={<LPBondInterface />} />
                     <Route path="/governance" element={<DAOGovernance />} />
