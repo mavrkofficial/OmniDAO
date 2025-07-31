@@ -223,14 +223,16 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Bottom Image */}
-      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '2rem' }}>
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <img 
           src="https://omnidao.s3.us-east-2.amazonaws.com/W04_Believe_In_Something.png" 
           alt="Believe In Something" 
           style={{ 
             maxWidth: '600px', 
             width: '100%',
-            filter: 'brightness(1.05) contrast(1.05)'
+            filter: 'brightness(1.05) contrast(1.05)',
+            display: 'block',
+            margin: '0 auto'
           }} 
         />
       </div>
