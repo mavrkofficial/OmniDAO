@@ -1,5 +1,6 @@
-import { getDefaultWallets } from '@rainbow-me/rainbowkit';
-import { createConfig, http } from 'wagmi';
+import { getDefaultConfig } from '@rainbow-me/rainbowkit';
+import { mainnet } from 'wagmi/chains';
+import { http } from 'viem';
 
 // Ink Layer 2 Chain Configuration
 const inkChain = {
@@ -7,9 +8,9 @@ const inkChain = {
   name: 'Ink Layer 2',
   network: 'ink',
   nativeCurrency: {
-    decimals: 18,
     name: 'INK',
     symbol: 'INK',
+    decimals: 18,
   },
   rpcUrls: {
     default: { http: ['https://ink.drpc.org'] },
@@ -18,18 +19,16 @@ const inkChain = {
   blockExplorers: {
     default: { name: 'Ink Explorer', url: 'https://explorer.inkonchain.com' },
   },
-} as any;
+  testnet: false,
+  ens: null,
+};
 
 const chains = [inkChain];
 
-const { connectors } = getDefaultWallets({
+export const config = getDefaultConfig({
   appName: 'Omni DAO',
   projectId: process.env.REACT_APP_WALLETCONNECT_PROJECT_ID || '9c73cb7134cec477e1ef752dd9b4ba3b',
-});
-
-export const wagmiConfig = createConfig({
   chains,
-  connectors,
   transports: {
     [inkChain.id]: http(),
   },

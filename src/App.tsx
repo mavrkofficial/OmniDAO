@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Removed Box import - using div instead
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import { WagmiConfig } from 'wagmi';
+import { WagmiProvider } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import '@rainbow-me/rainbowkit/styles.css';
 import './App.css';
@@ -14,13 +14,13 @@ import StakingInterface from './components/StakingInterface';
 import RevenueAnalytics from './components/RevenueAnalytics';
 import Navigation from './components/Navigation';
 import { ChainProvider } from './contexts/ChainContext';
-import { wagmiConfig } from './config/rainbowkit';
+import { config } from './config/rainbowkit';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
-    <WagmiConfig config={wagmiConfig}>
+    <WagmiProvider config={config}>
       <RainbowKitProvider>
         <QueryClientProvider client={queryClient}>
           <ChainProvider>
@@ -43,7 +43,7 @@ function App() {
           </ChainProvider>
         </QueryClientProvider>
       </RainbowKitProvider>
-    </WagmiConfig>
+    </WagmiProvider>
   );
 }
 
