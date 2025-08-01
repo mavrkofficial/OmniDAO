@@ -1,6 +1,7 @@
 .App {
   min-height: 100vh;
   background: #160c21;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .main-container {
@@ -41,8 +42,13 @@
   font-family: 'Orbitron', Arial, sans-serif;
 }
 
-/* Orbitron font for headers */
+/* Orbitron font for headers and titles */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+
+/* Ensure buttons and interactive elements also use Orbitron for consistency */
+button, .omni-button {
   font-family: 'Orbitron', Arial, sans-serif;
 }
 
@@ -81,6 +87,15 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-family: 'Orbitron', Arial, sans-serif;
+}
+
+/* Global font settings */
+* {
+  font-family: inherit;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Responsive design */
