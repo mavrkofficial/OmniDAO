@@ -10,7 +10,7 @@ const Navigation: React.FC = () => {
   const config = getAppConfig();
   
   const navItems = [
-    { path: '/presale', label: 'Presale', enabled: config.enabledSections.presale },
+    { path: '/presale', label: 'Genesis Whitelist', enabled: config.enabledSections.presale },
     { path: '/', label: 'Dashboard', enabled: config.enabledSections.dashboard },
     { path: '/bonds', label: 'Bonds', enabled: config.enabledSections.bonds },
     { path: '/lp-bonds', label: 'LP Bonds', enabled: config.enabledSections.lpBonds },
