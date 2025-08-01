@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@inkonchain/ink-kit';
 import { useAccount } from 'wagmi';
 
@@ -13,10 +13,7 @@ const PresaleInterface: React.FC = () => {
     currentPPT: '$0.0001'
   };
 
-  const mockUserData = {
-    genesisRank: '#0',
-    timestamp: 'Not Joined'
-  };
+
 
     return (
     <div style={{ 
