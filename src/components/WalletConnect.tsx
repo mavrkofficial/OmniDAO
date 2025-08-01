@@ -1,9 +1,7 @@
 import React from 'react';
 import CustomConnectButton from './CustomConnectButton';
-import { useChain } from '../contexts/ChainContext';
 
 const WalletConnect: React.FC = () => {
-  const { selectedChain } = useChain();
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
       <CustomConnectButton />
