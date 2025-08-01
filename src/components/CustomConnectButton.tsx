@@ -50,15 +50,16 @@ const CustomConnectButton: React.FC = () => {
                       transition: 'all 0.2s ease',
                     }}
                   >
-                    <img 
-                      src="https://omnidao.s3.us-east-2.amazonaws.com/power-xxl.png" 
-                      alt="Connect Wallet" 
-                      style={{ 
-                        width: '32px', 
-                        height: '32px',
-                        filter: 'brightness(1.1) contrast(1.1)',
-                        transition: 'transform 0.2s ease'
-                      }}
+                                         <img 
+                       src="https://omnidao.s3.us-east-2.amazonaws.com/power-xxl.png" 
+                       alt="Connect Wallet" 
+                       style={{ 
+                         width: '32px', 
+                         height: '32px',
+                         objectFit: 'contain',
+                         filter: 'brightness(1.1) contrast(1.1)',
+                         transition: 'transform 0.2s ease'
+                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'scale(1.1)';
                       }}
@@ -86,15 +87,16 @@ const CustomConnectButton: React.FC = () => {
                       justifyContent: 'center',
                     }}
                   >
-                    <img 
-                      src="https://omnidao.s3.us-east-2.amazonaws.com/power-xxl.png" 
-                      alt="Switch Network" 
-                      style={{ 
-                        width: '32px', 
-                        height: '32px',
-                        filter: 'brightness(1.1) contrast(1.1)',
-                        opacity: 0.7
-                      }}
+                                         <img 
+                       src="https://omnidao.s3.us-east-2.amazonaws.com/power-xxl.png" 
+                       alt="Switch Network" 
+                       style={{ 
+                         width: '32px', 
+                         height: '32px',
+                         objectFit: 'contain',
+                         filter: 'brightness(1.1) contrast(1.1)',
+                         opacity: 0.7
+                       }}
                     />
                   </button>
                 );
@@ -116,15 +118,16 @@ const CustomConnectButton: React.FC = () => {
                       justifyContent: 'center',
                     }}
                   >
-                    <img 
-                      src="https://omnidao.s3.us-east-2.amazonaws.com/power-xxl.png" 
-                      alt="Connected" 
-                      style={{ 
-                        width: '32px', 
-                        height: '32px',
-                        filter: 'brightness(1.1) contrast(1.1)',
-                        opacity: 0.8
-                      }}
+                                         <img 
+                       src="https://omnidao.s3.us-east-2.amazonaws.com/power-xxl.png" 
+                       alt="Connected" 
+                       style={{ 
+                         width: '32px', 
+                         height: '32px',
+                         objectFit: 'contain',
+                         filter: 'brightness(1.1) contrast(1.1)',
+                         opacity: 0.8
+                       }}
                     />
                   </button>
                 </div>
