@@ -13,14 +13,6 @@ const PresaleInterface: React.FC = () => {
     currentPPT: '$0.0001'
   };
 
-  // Mock data - will be replaced with contract calls
-  const mockGenesisData = {
-    whitelistPool: '100,000,000',
-    genesisAddresses: '0',
-    startingPPT: '$0.0001',
-    currentPPT: '$0.0001'
-  };
-
   const mockUserData = {
     genesisRank: '#0',
     timestamp: 'Not Joined'
