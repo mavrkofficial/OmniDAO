@@ -199,15 +199,7 @@ const Dashboard: React.FC = () => {
               onClick={() => window.location.href = '/governance'}
             />
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
-            <QuickActionCard
-              title="LP Bonds"
-              description="Acquire LP positions with supply neutralization"
-              action="Explore LP Bonds"
-              icon="🌊"
-              onClick={() => window.location.href = '/lp-bonds'}
-            />
-          </div>
+
           <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
             <QuickActionCard
               title="Revenue Analytics"

@@ -7,9 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import '@rainbow-me/rainbowkit/styles.css';
 import './App.css';
 import Dashboard from './components/Dashboard';
-import Presale from './components/Presale';
 import BondInterface from './components/BondInterface';
-import LPBondInterface from './components/LPBondInterface';
 import DAOGovernance from './components/DAOGovernance';
 import StakingInterface from './components/StakingInterface';
 import RevenueAnalytics from './components/RevenueAnalytics';
@@ -39,19 +37,15 @@ function App() {
                       appConfig.isPresaleOnly ? <Navigate to="/presale" replace /> : <Dashboard />
                     } />
                     
-                    {/* Presale - always available */}
-                    <Route path="/presale" element={<Presale />} />
-                    
-                    {/* Other routes - only available if not presale-only */}
-                    {!appConfig.isPresaleOnly && (
-                      <>
-                        <Route path="/bonds" element={<BondInterface />} />
-                        <Route path="/lp-bonds" element={<LPBondInterface />} />
-                        <Route path="/governance" element={<DAOGovernance />} />
-                        <Route path="/staking" element={<StakingInterface />} />
-                        <Route path="/analytics" element={<RevenueAnalytics />} />
-                      </>
-                    )}
+                                                {/* Routes - only available if not presale-only */}
+                            {!appConfig.isPresaleOnly && (
+                              <>
+                                <Route path="/bonds" element={<BondInterface />} />
+                                <Route path="/governance" element={<DAOGovernance />} />
+                                <Route path="/staking" element={<StakingInterface />} />
+                                <Route path="/analytics" element={<RevenueAnalytics />} />
+                              </>
+                            )}
                     
                     {/* Catch all - redirect to default */}
                     <Route path="*" element={
